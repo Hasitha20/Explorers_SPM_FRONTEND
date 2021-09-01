@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 //import { GlobalState } from '../../../GlobalState'
 import {Link} from 'react-router-dom'
@@ -48,18 +48,6 @@ export default function SideBar() {
     const [sidebar, setSidebar] = useState(true)
 
     const showSidebar = () => setSidebar(!sidebar)
-
-    const notLoggedRouter = () => {
-        return (
-            
-                <div style={{paddingTop: "20px"}}> 
-                    {SidebarData.map((item, index) => {
-                    return <SubMenu item={item} key={index} />;
-                    })}
-                </div>
-            
-        )
-    }
 
     return (
         <div>

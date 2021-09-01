@@ -13,3 +13,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.mainPages{
+  padding-left: 310px;
+  margin-right: 16px;
+}
