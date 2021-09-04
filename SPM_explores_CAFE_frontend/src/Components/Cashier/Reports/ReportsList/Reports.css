@@ -1,0 +1,100 @@
+.reports  {
+    flex: 2;
+  
+    
+  }
+.reports h1{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.reports table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 145px;
+    margin-bottom: 30px;
+    border: 1px solid rgb(202, 194, 194);
+    padding: 8px;
+    text-align: center;
+    word-spacing: 1.2px;
+    font-size: 15px;
+    background-color: #cfc1c1;
+    box-shadow: -21px 10px 93px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -21px 10px 93px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -21px 10px 93px 0px rgba(0,0,0,0.75);
+    padding: 20px;
+
+}
+.reports table button{
+    width: 125px;
+    background-color: rgb(163, 211, 202);
+    text-transform: uppercase;
+    border-radius: 2px;
+    height: 45px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+.reports th, td {
+    padding: 15px;
+    text-align: left;
+  }
+.reports .btnnewEntry{
+    width: 200px;
+    background: rgb(163, 211, 202);
+    color: rgb(251, 253, 253);
+    margin-left: 930px;
+    height: 50px;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    font-size: 15px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 50px;
+    box-shadow: -21px 10px 93px 0px rgba(0,0,0,0.39);
+    -webkit-box-shadow: -21px 10px 93px 0px rgba(0,0,0,0.39);
+    -moz-box-shadow: -21px 10px 93px 0px rgba(0,0,0,0.39);
+}
+.btnnewEntry :link{
+    text-decoration: none;
+    color: inherit
+   
+}
+.table-topic{
+   margin-left: 148px;
+   background-color: rgb(3, 4, 49);
+   width: 79.5%;
+   color: white;
+   text-align: center;
+   text-transform: uppercase;
+}
+/* .widgetLgTitle{
+    font-size: 22px;
+    font-weight: 600;
+    align-content: center;
+
+}
+.widgetLgTable{
+    width: 100%;
+    border-spacing: 20px;
+}
+.widgetLgTh{
+    text-align: left;
+    margin-right: 500px;
+}
+.widgetLgProduct{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.widgetLgImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.widgetLgDate, .widgetLgStartTime, .widgetLgEndTime, .widgetLgDateEdit, .widgetLgDelete{
+    font-weight: 300;
+} */
