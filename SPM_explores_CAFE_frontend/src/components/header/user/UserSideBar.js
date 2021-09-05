@@ -5,7 +5,7 @@ import * as FaIcons from 'react-icons/fa'
 import * as AiIcons from 'react-icons/ai'
 import {UserSideBarData} from './UserSideBarData'
 import UserSubMenu from './UserSubMenu'
-// import { GlobalState } from '../../../GlobalState'
+import { GlobalState } from '../../../GlobalState'
 import axios from 'axios'
 
 const Nav = styled.div`
@@ -62,7 +62,7 @@ function SideBar() {
 
     const showSidebar = () => setSidebar(!sidebar)
 
-    // const state = useContext(GlobalState)
+    const state = useContext(GlobalState)
     // const [isLogged, setIsLogged] = state.userAPI.isLogged
 
     // const logoutUser = async () =>{
