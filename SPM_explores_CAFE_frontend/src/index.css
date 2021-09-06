@@ -19,3 +19,5 @@ code {
 }
 
 @import url("./components/mainPages/user/menu/menu.css");
+
+@import url("./components/mainPages/user/detailProduct/detailProduct.css");
