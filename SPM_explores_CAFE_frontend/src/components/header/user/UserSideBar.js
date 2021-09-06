@@ -5,7 +5,7 @@ import * as FaIcons from 'react-icons/fa'
 import * as AiIcons from 'react-icons/ai'
 import {UserSideBarData} from './UserSideBarData'
 import UserSubMenu from './UserSubMenu'
-import { GlobalState } from '../../../GlobalState'
+import { GlobalState } from '../../../Globalstate'
 import axios from 'axios'
 
 const Nav = styled.div`

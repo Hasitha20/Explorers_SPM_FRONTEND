@@ -17,3 +17,5 @@ code {
   padding-left: 310px;
   margin-right: 16px;
 }
+
+@import url("./components/mainPages/user/menu/menu.css");
