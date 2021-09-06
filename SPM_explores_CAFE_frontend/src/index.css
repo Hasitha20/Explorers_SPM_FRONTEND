@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.mainPages{
+  padding-left: 320px;
+  margin-right: 10px;
+}
+
+/*--------------------- view Foods  List --------------------------*/
+@import url("./Components/KitchenManager/Menu/foods.css");

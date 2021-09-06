@@ -1,0 +1,23 @@
+.foodIcon{
+    font-size: 4.5em;
+    padding-left: 10px;
+    padding-top: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+.foodIcon h4{
+    font-size: 30px;
+    padding-top: -121px;
+    padding-left: 10px;
+}
+.foodslist{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-items: center;
+    margin: 20px, 0;
+}
+
+/*--------------------- Food item --------------------------*/
+@import url("../item/foodItem.css");
