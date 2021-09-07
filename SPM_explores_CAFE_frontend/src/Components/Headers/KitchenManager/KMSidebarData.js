@@ -18,15 +18,15 @@ export const SidebarData = [
         icon: <BiIcons.BiFoodMenu />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
-        subNav: [
+        subNav: [           
             {
-                title: 'Add Foods',
-                path: '/menu/addnewfood',
+                title: 'Foods',
+                path: '/menu/foods',
                 icon: <BsIcons.BsPeopleFill />,
             },
             {
-                title: 'Manage Foods',
-                path: '/menu/foods',
+                title: 'Add Foods',
+                path: '/menu/addnewfood',
                 icon: <BsIcons.BsPeopleFill />,
             },
         ]
