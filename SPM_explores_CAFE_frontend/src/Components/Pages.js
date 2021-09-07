@@ -22,7 +22,7 @@ function Pages(){
             <Switch>
                 <Route path = "/login" exact component ={isLogged? NotFound : Login}/>
                 <Route path= "/register" exact component={isLogged? NotFound :Register}/>
-                <Route path="/cashier-dashboard" exact component={isCashier? CashierDashboard: NotFound}/>
+                <Route path="/cashier-dashboard" exact component={CashierDashboard}/>
               {/*   <Route path = "/login" exact component ={ Login}/>
                 <Route path= "/register" exact component={Register}/>
                 <Route path="/cashier-dashboard" exact component={CashierDashboard}/> */}

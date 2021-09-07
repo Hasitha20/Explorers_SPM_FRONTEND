@@ -13,7 +13,7 @@ function Home() {
 
         localStorage.removeItem('firstLogin')
 
-        window.location.href = "/";
+        window.location.href = "/cashier-dashboard";
     }
 
     const adminRouter = () =>{

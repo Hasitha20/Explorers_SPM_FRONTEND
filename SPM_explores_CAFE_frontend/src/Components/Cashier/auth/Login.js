@@ -1,9 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { Link } from 'react-router-dom';
+import { GlobalState } from '../../../GlobalState';
 import axios from 'axios'
 import './Login.css'
+import NotFound from '../Utils/NotFound';
 
 function Login() {
+  const state = useContext(GlobalState)
+  const [isCashier] = state.userAPI.isCashier
   const [user, setUser] = useState({
     email: '', password: ''
   })
@@ -19,8 +23,8 @@ function Login() {
       await axios.post('http://localhost:5000/user/login', {...user})
 
       localStorage.setItem('firstLogin', true)
+      if(isCashier) window.location.href = "/cashier-dashboard" 
       
-      window.location.href = "/cashier-dashboard"
 
     }catch(err){
       alert(err.response.data.msg)

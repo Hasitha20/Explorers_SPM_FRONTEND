@@ -8,7 +8,7 @@ function CashierReportsAPI() {
 
     useEffect(() => {
         const getReport = async () => {
-            const res = await axios.get('http://localhost:5000/api/cashierReport')
+            const res = await axios.get('/api/cashierReport')
             setReport(res.data)
             console.log(res.data)
         }

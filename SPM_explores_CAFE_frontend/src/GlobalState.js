@@ -1,5 +1,6 @@
 import React, {createContext, useState, useEffect} from 'react';
 import UserAPI from './Components/Cashier/api/UserAPI';
+import CashierReportsAPI from './Components/Cashier/api/CashierReportsAPI';
 import axios from 'axios'
 
 export const GlobalState = createContext()
@@ -29,7 +30,8 @@ export const DataProvider = ({children}) =>{
     }, [])
     const state={
         token: [token, setToken],
-        userAPI: UserAPI(token)
+        userAPI: UserAPI(token),
+        cashierReportsAPI: CashierReportsAPI(token)
        
     }
 

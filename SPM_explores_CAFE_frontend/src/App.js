@@ -4,13 +4,13 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import { DataProvider } from './GlobalState';
 import Pages from './Components/Pages';
 import Home from './Components/Cashier/Dashboard/Home';
+import Header from './Components/Cashier/Dashboard/Header';
 
 function App() {
   return (
     <DataProvider>
       <Router>
         <div className="App">
-          
           <div className="mainPages"><Pages /></div>
         </div>
       </Router>

@@ -18,7 +18,7 @@ function UserAPI(token){
                     })
 
                     setIsLogged(true)
-                    res.data.role === 2 ? setIsCashier(true) : setIsCashier(false)
+                    res.data.role === 1 ? setIsCashier(true) : setIsCashier(false)
                     //setCart(res.data.cart)
                 }catch(err){
                     alert(err.response.data.msg)
@@ -49,7 +49,7 @@ function UserAPI(token){
     } */
     return {
         isLogged : [isLogged, setIsLogged],
-        isCashier:[isCashier, setIsCashier],
+        isCashier:[isCashier, setIsCashier]
      /*    cart: [cart, setCart],
         addCart: addCart,
         history: [history, setHistory] */
