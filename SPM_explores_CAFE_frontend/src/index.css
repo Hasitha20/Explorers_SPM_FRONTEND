@@ -20,38 +20,42 @@ code {
 }
 
  
-@import url("./components/mainPages/user/menu/menu.css");
+/*@import url("./components/mainPages/user/menu/menu.css");*/
+@import url("./Components/mainPages/user/menu/menu.css");
 
-@import url("./components/mainPages/user/detailProduct/detailProduct.css");
+/*@import url("./components/mainPages/user/detailProduct/detailProduct.css");*/
+@import url("./Components/mainPages/user/detailProduct/detailProduct.css");
  
 /*--------------------- Category List - manager --------------------------*/
-@import url("./components/mainPages/manager/category/categoryView/categoryList.css");
+/*@import url("./components/mainPages/manager/category/categoryView/categoryList.css");*/
+@import url("./Components/mainPages/manager/category/categoryView/categoryList.css");
+
 
 /*--------------------- Employee - manager --------------------------*/
-@import url("./components/mainPages/manager/employee/addNewEmployee/employee.css");
+/*@import url("./components/mainPages/manager/employee/addNewEmployee/employee.css");*/
+@import url("./Components/mainPages/manager/employee/addNewEmployee/employee.css");
 
 /*--------------------- login - employee --------------------------*/
-@import url("./components/login/loginEmployee.css");
+/*@import url("./components/login/loginEmployee.css");*/
+@import url("./Components/login/loginEmployee.css");
 
 /*--------------------- create category - Manager --------------------------*/
-@import url("./components/mainPages/manager/category/createCategory/CreateCategory.css");
+/*@import url("./components/mainPages/manager/category/createCategory/CreateCategory.css");*/
 
 /*--------------------- manage - employee --------------------------*/
-@import url("./components/mainPages/manager/employee/manageEmployee/ManageUser.css");
+/*@import url("./components/mainPages/manager/employee/manageEmployee/ManageUser.css");*/
 
 /*--------------------- dashboard - manager --------------------------*/
-@import url("./components/mainPages/manager/dashboard/dashboard.css");
- 
-  padding-left: 320px;
-  margin-right: 10px;
-}
+/*@import url("./components/mainPages/manager/dashboard/dashboard.css");*/
+@import url("./Components/mainPages/manager/dashboard/dashboard.css");
 
 /*--------------------- view Foods  List --------------------------*/
 @import url("./Components/KitchenManager/Menu/foods.css");
 
 
 /*--------------------- Detail Food --------------------------*/
-@import url("./Components/KitchenManager/Details/detailProducts.css");
+/*@import url("./Components/KitchenManager/Details/detailProducts.css");*/
+
 
 /*--------------------- Add Food --------------------------*/
 @import url("./Components/KitchenManager/Menu/addFoods.css");

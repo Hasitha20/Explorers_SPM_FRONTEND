@@ -1,47 +1,30 @@
- 
-import React from 'react'
+ import React from 'react'
 import {BrowserRouter as Router} from 'react-router-dom'
 import './index.css'
-// import SideBar from './components/header/manager/SideBar';
-import UserSideBar from './components/header/user/UserSideBar'
-import Pages from './components/Pages';
+import SideBarManager from './Components/header/manager/SideBar'
+//import UserSideBar from './components/header/user/UserSideBar'
+//import Pages from './components/Pages';
+import Pages from './Components/Pages'
 import { DataProvider } from './Globalstate'
- 
-import React from 'react' 
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import Pages from './Components/KitchenManager/Pages';
-import SideBarKM from './Components/Headers/KitchenManager/KMSidebar'
+//import SideBarKM from './Components/Headers/KitchenManager/KMSidebar'
 import './index.css'
-import {DataProvider} from './Components/KitchenManager/GlobalStateKM'
-
+import KMSideBar from './Components/Headers/KitchenManager/KMSidebar'
  
 
 function App() {
 
   return (
     <DataProvider>
- 
       <Router>
         <div className="App">
- 
-          <UserSideBar />
+          {/*<UserSideBar />*/}
           {/* <SideBar/> */}
- 
+          <KMSideBar/>
           <div className="mainPages">
               <Pages />
             </div>
         </div>
       </Router>
- 
-    <Router>
-      <div className="App">                 
-        <SideBarKM />
-        <div className="mainPages">
-          <Pages />
-        </div>        
-      </div>
-    </Router>
- 
     </DataProvider>
   );
 } 

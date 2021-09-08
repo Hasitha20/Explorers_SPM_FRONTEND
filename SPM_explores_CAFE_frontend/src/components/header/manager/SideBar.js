@@ -65,13 +65,11 @@ export default function SideBar() {
     const loggedRouter = () => {
         return (
             <div>
-                <div> 
-                    {SidebarData.map((item, index) => {
-                    return <SubMenu item={item} key={index} />;
-                    })}
-                    <BiIcons.BiLogOut style={{color:'red', marginLeft:'19px', marginTop:'10px'}} />
-                    <Link to="/login_employee" style={{color:'white', marginLeft:'17px'}} onClick={logoutEmployee}>Logout</Link>
-                </div>
+                
+                <Link to="/login_employee" style={{
+                        color:'white', 
+                        marginLeft:'90px'
+                    }}>Login</Link>
             </div>
         )
     }
@@ -90,10 +88,13 @@ export default function SideBar() {
                     Explores CAFE
                 </NavIcon>
                 {
-                    isLogged ? loggedRouter() : <Link to="/login_employee" style={{
-                        color:'white', 
-                        marginLeft:'90px'
-                    }}>Login</Link>
+                    isLogged ? loggedRouter() : <div> 
+                    {SidebarData.map((item, index) => {
+                    return <SubMenu item={item} key={index} />;
+                    })}
+                    <BiIcons.BiLogOut style={{color:'red', marginLeft:'19px', marginTop:'10px'}} />
+                    <Link to="/login_employee" style={{color:'white', marginLeft:'17px'}} onClick={logoutEmployee}>Logout</Link>
+                </div>
                 }
                 
                 

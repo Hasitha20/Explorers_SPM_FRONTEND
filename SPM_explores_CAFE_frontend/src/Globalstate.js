@@ -1,14 +1,9 @@
- 
+import React, {createContext, useState, useEffect} from 'react' 
 import axios from 'axios'
-import React, {createContext, useState, useEffect} from 'react'
-import MenuAPI from './components/mainPages/user/api/MenuAPI'
-// import UserAPI from './api/UserAPI'
-
- 
-import React, {createContext, useState, useEffect} from 'react'
+import MenuAPI from './api/user/MenuAPI'
 import CategoryAPI from './api/managerAPI/CategoryAPI'
 import EmployeeAPI from './api/managerAPI/EmployeeAPI'
-import axios from 'axios'
+
  
 
 export const GlobalState = createContext()
@@ -28,14 +23,6 @@ export const DataProvider = ({children}) => {
         const firstLogin = localStorage.getItem('firstLogin')
         if(firstLogin) refreshToken()
     },[])
-
-
-    
-    const state = {
-        token: [token, setToken],
-        menuAPI: MenuAPI(),
-        // userAPI: UserAPI(token)
-
  
     useEffect(() => {
         const firstLogin = localStorage.getItem('firstLogin')
@@ -53,8 +40,8 @@ export const DataProvider = ({children}) => {
     const state = {
         token: [token, setToken],
         categoryAPI: CategoryAPI(),
-        employeeAPI: EmployeeAPI(token)
- 
+        employeeAPI: EmployeeAPI(token),
+        menuAPI: MenuAPI(),
     }
 
     return(
