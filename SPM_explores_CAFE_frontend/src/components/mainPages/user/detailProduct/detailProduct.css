@@ -1,0 +1,74 @@
+.detail{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px;
+    font-size: 150%;
+    background-color: rgb(44, 43, 43);
+    margin-left: -10px;
+    
+    
+}
+
+.detail img{
+    max-width: 500px;
+    width: 50%;
+    margin: 20px;
+    margin-top: -40px;
+    margin-left: 20px;
+    height: 450px;
+    object-fit: contain;
+    display: block;
+}
+
+.box-detail{
+    max-width: 500px;
+    width: 100%;
+    margin: 5px 20px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.box-detail .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.box-detail h2{
+    text-transform: uppercase;
+    color:red;
+    letter-spacing: 2px;
+    font-weight: 2rem;
+
+}
+
+.box-detail p{
+    line-height: 1.5;
+    margin: 5px 0;
+    opacity: 0.8;
+    color: aliceblue;
+}
+
+.box-detail .cart{
+    background: red;
+    color:white;
+    margin-top: 10px;
+    padding: 10px 25px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    
+    
+}
+
+.foods{
+    max-width: 800px;
+    width: 100%;
+    margin: 5px 20px;
+    margin-left: 20px;
+}
+
