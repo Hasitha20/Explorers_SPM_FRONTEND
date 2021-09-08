@@ -10,7 +10,7 @@ function App() {
     <DataProvider>
       <Router>
         <div className="App">
-          <SideBar/>
+           
           <div className="mainPages">
               <Pages />
             </div>
