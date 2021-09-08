@@ -1,17 +1,20 @@
 import React from 'react'
-import CashierSideBar from './Components/Headers/cashier/CashierSideBar'
-import {BrowserRouter as Router} from 'react-router-dom'
-import { DataProvider } from './GlobalState';
-import Pages from './Components/Pages';
-import Home from './Components/Cashier/Dashboard/Home';
-import Header from './Components/Cashier/Dashboard/Header';
-
+import {BrowserRouter as Router} from 'react-router-dom';
+import {DataProvider} from './GlobalState'
+import Header from './components/cashier/Headers/Header.jsx';
+import Sidebar from './components/cashier/sidebar/Sidebar';
+import CSHome from './components/cashier/Dashboard/CSHome';
+import './App.css'
 function App() {
   return (
     <DataProvider>
       <Router>
         <div className="App">
-          <div className="mainPages"><Pages /></div>
+          <Header/>
+            <div className="container">
+              <Sidebar/>
+              <CSHome/>
+            </div>
         </div>
       </Router>
     </DataProvider>
