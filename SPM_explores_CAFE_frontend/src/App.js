@@ -5,8 +5,6 @@ import SideBar from './components/header/manager/SideBar';
 import Pages from './components/Pages';
 import { DataProvider } from './Globalstate'
 
- 
-
 function App() {
 
   return (
@@ -22,6 +20,6 @@ function App() {
     </DataProvider>
   );
 } 
-      
+       
 export default App;
 

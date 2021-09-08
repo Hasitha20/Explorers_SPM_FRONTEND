@@ -12,25 +12,7 @@ export const SidebarData = [
         title: 'Dashboard',
         path: '/dashboard_manager',
         icon: <RiIcons.RiDashboardLine />
-    },/*
-    {
-        title: 'Hiru',
-        icon: <RiIcons.RiDashboardLine />,
-        iconClosed: <RiIcons.RiArrowDownSFill />,
-        iconOpened: <RiIcons.RiArrowUpSFill />,
-        subNav: [
-            {
-                title: 'Add Something',
-                path: '/hiru',
-                icon: <BsIcons.BsPeopleFill />,
-            },
-            {
-                title: 'Manage Something',
-                path: '/manageHiru',
-                icon: <BsIcons.BsPeopleFill />,
-            },
-        ]
-    },*/
+    },
     {
         title: 'Employee',
         icon: <BsIcons.BsPeopleFill />,
@@ -39,7 +21,7 @@ export const SidebarData = [
         subNav: [
             {
                 title: 'Add employee',
-                path: '/employee/add_employee',
+                path: '/messages',
                 icon: <BsIcons.BsPeopleFill />,
             },
             {
