@@ -1,11 +1,14 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import styled from 'styled-components'
 //import { GlobalState } from '../../../GlobalState'
 import {Link} from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
 import {SidebarData} from './SidebarData'
 import SubMenu from './SubMenu'
-//import axios from 'axios'
+import axios from 'axios'
+import { GlobalState } from '../../../Globalstate'
+import * as BiIcons from 'react-icons/bi'
+
 
 const Nav = styled.div`
     background: #15171c;
@@ -43,11 +46,30 @@ const SidebarWrap = styled.div`
 `;
 
 export default function SideBar() {
-    
-
+    const state = useContext(GlobalState)
+    const [isLogged, setIsLogged] = state.employeeAPI.isLogged
     const [sidebar, setSidebar] = useState(true)
-
     const showSidebar = () => setSidebar(!sidebar)
+
+    const logoutEmployee = async () => {
+        await axios.get('/emp/logout')
+        localStorage.removeItem('firstLogin')
+        setIsLogged(false)
+    }
+
+    const loggedRouter = () => {
+        return (
+            <div>
+                <div> 
+                    {SidebarData.map((item, index) => {
+                    return <SubMenu item={item} key={index} />;
+                    })}
+                    <BiIcons.BiLogOut style={{color:'red', marginLeft:'19px', marginTop:'10px'}} />
+                    <Link to="/login_employee" style={{color:'white', marginLeft:'17px'}} onClick={logoutEmployee}>Logout</Link>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div>
@@ -57,16 +79,20 @@ export default function SideBar() {
             </NavIcon>
         </Nav>
 
-        <SideBarNav sidebar={sidebar} style={{fontSize: "20px"}}>
+        <SideBarNav sidebar={sidebar} style={{fontSize: "20px", color:'white'}}>
             <SidebarWrap>
                 <NavIcon to="/" style={{color: "white", textDecoration: "none"}}>
                     Explores CAFE
                 </NavIcon>
-                <div> 
-                    {SidebarData.map((item, index) => {
-                    return <SubMenu item={item} key={index} />;
-                    })}
-                </div>
+                {
+                    isLogged ? loggedRouter() : <Link to="/login_employee" style={{
+                        color:'white', 
+                        marginLeft:'90px'
+                    }}>Login</Link>
+                }
+                
+                
+                
                 
             </SidebarWrap>
         </SideBarNav>
