@@ -9,7 +9,7 @@ import TestCompo from './mainPages/Test'
 
 function Pages(){
     //const state = useContext(GlobalState)
-    
+     
     return (
         <Switch>
             <Route path="/category/addNewCategory" exact component={CreateCategory}/>
@@ -17,7 +17,7 @@ function Pages(){
             <Route path="/messages" exact component={TestCompo} />
 
             <Route path="/dashboard_manager" exact component={DashBoard}/>
-            {/*<Route path='/category/category_list' exact component={CategoryList}/>*/}
+            {/* <Route path='/category/category_list' exact component={CategoryList}/>*/}
 
             <Route path="/employee/add_employee" exact component={AddNewEmployee} />
             <Route path="/employee/manage_emp" exact component={EmployeeList} />
