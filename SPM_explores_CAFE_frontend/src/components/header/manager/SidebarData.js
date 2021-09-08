@@ -13,7 +13,7 @@ export const SidebarData = [
         path: '/dashboard_manager',
         icon: <RiIcons.RiDashboardLine />
     },
-    {
+    { 
         title: 'Employee',
         icon: <BsIcons.BsPeopleFill />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
