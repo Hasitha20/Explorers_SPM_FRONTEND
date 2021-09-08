@@ -8,9 +8,9 @@ function EmployeeAPI(token) {
     
 
     const getEmployeesInformations = async () => {
-        const res = await axios.get('/emp/getEmployee')
+        const res = await axios.get('/emp/getEmpList')
         //setUsersList(res.data)
-        setEmployeeList(res.data)
+        setEmployeeList(res.data.emps)
     }
     useEffect(() => {
         getEmployeesInformations()
