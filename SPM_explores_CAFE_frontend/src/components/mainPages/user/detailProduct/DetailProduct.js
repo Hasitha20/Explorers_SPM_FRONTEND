@@ -44,7 +44,7 @@ function DetailMenu(){
             <h2>Related Products</h2>
             <div>
             {
-                
+                //food map comment added
                 foods.map(food => {
                     return food.category === detailProduct.category
                     ? <FoodItem key={food._id} food={food} /> : null
