@@ -1,4 +1,6 @@
-body {
+* {
+  padding: 0;
+  box-sizing: border-box;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -11,3 +13,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.mainPages{
+ 
+  padding-left: 310px;
+  margin-right: 16px;
+}
+
+ 
+@import url("./components/mainPages/user/menu/menu.css");
+
+@import url("./components/mainPages/user/detailProduct/detailProduct.css");
+ 
+/*--------------------- Category List - manager --------------------------*/
+@import url("./components/mainPages/manager/category/categoryView/categoryList.css");
+
+/*--------------------- Employee - manager --------------------------*/
+@import url("./components/mainPages/manager/employee/addNewEmployee/employee.css");
+
+/*--------------------- login - employee --------------------------*/
+@import url("./components/login/loginEmployee.css");
+
+/*--------------------- create category - Manager --------------------------*/
+@import url("./components/mainPages/manager/category/createCategory/CreateCategory.css");
+
+/*--------------------- manage - employee --------------------------*/
+@import url("./components/mainPages/manager/employee/manageEmployee/ManageUser.css");
+
+/*--------------------- dashboard - manager --------------------------*/
+@import url("./components/mainPages/manager/dashboard/dashboard.css");
+ 
+  padding-left: 320px;
+  margin-right: 10px;
+}
+
+/*--------------------- view Foods  List --------------------------*/
+@import url("./Components/KitchenManager/Menu/foods.css");
+
+
+/*--------------------- Detail Food --------------------------*/
+@import url("./Components/KitchenManager/Details/detailProducts.css");
+
+/*--------------------- Add Food --------------------------*/
+@import url("./Components/KitchenManager/Menu/addFoods.css");
+ 
+ 
+ 
