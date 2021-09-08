@@ -14,6 +14,8 @@ function Pages(){
         <Switch>
             <Route path="/category/addNewCategory" exact component={CreateCategory}/>
 
+            <Route path="/messages" exact component={TestCompo} />
+
             <Route path="/dashboard_manager" exact component={DashBoard}/>
             {/*<Route path='/category/category_list' exact component={CategoryList}/>*/}
 

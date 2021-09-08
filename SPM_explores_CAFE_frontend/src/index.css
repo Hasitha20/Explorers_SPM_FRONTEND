@@ -36,19 +36,4 @@ code {
 
 /*--------------------- dashboard - manager --------------------------*/
 @import url("./components/mainPages/manager/dashboard/dashboard.css");
- 
-  padding-left: 320px;
-  margin-right: 10px;
-}
 
-/*--------------------- view Foods  List --------------------------*/
-@import url("./Components/KitchenManager/Menu/foods.css");
-
-
-/*--------------------- Detail Food --------------------------*/
-@import url("./Components/KitchenManager/Details/detailProducts.css");
-
-/*--------------------- Add Food --------------------------*/
-@import url("./Components/KitchenManager/Menu/addFoods.css");
- 
- 
