@@ -1,3 +1,11 @@
+ 
+import React from 'react'
+import {BrowserRouter as Router} from 'react-router-dom'
+import './index.css'
+import SideBar from './components/header/manager/SideBar';
+import Pages from './components/Pages';
+import { DataProvider } from './Globalstate'
+ 
 import React from 'react' 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Pages from './Components/KitchenManager/Pages';
@@ -5,11 +13,22 @@ import SideBarKM from './Components/Headers/KitchenManager/KMSidebar'
 import './index.css'
 import {DataProvider} from './Components/KitchenManager/GlobalStateKM'
 
+ 
 
 function App() {
 
   return (
     <DataProvider>
+ 
+      <Router>
+        <div className="App">
+           
+          <div className="mainPages">
+              <Pages />
+            </div>
+        </div>
+      </Router>
+ 
     <Router>
       <div className="App">                 
         <SideBarKM />
@@ -18,6 +37,7 @@ function App() {
         </div>        
       </div>
     </Router>
+ 
     </DataProvider>
   );
 } 
