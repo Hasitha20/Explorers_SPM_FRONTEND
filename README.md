@@ -10,4 +10,4 @@ Member details :
   Member 03 - IT19152356 prabodhalahiru - branch name(IT19152356) 
   Member 04 - IT19132624 Hasitha20 - branch name(IT19132624)
 
-Used Yechnologies : React, Node js, Express Js, mongodb
+Used Technologies : React, Node js, Express Js, mongodb
