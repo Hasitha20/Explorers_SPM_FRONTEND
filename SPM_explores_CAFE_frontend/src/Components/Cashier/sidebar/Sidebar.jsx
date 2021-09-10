@@ -3,6 +3,7 @@ import './Sidebar.css'
 import {Home} from '@material-ui/icons';
 import {CardTravelOutlined} from '@material-ui/icons';
 import {ListAltOutlined, PeopleAltOutlined, NoteAddOutlined, DescriptionOutlined} from '@material-ui/icons';
+import {Link} from 'react-router-dom'
 function Sidebar() {
     return (
         <div className="sidebar">
@@ -11,8 +12,10 @@ function Sidebar() {
                     <h3 className="sidebarTitle">Dashboard</h3>
                     <ul className="sidebarList">
                         <li className="sidebarListItem active">
+                            <Link to ="/" style={{textDecoration:"none", color:"white"}}>
                             <Home className="sidebarIcon"/>
                                 Home
+                            </Link>
                         </li>
                     </ul>
                     <h3 className="sidebarTitle">Orders</h3>
@@ -63,8 +66,10 @@ function Sidebar() {
                                 New Report
                         </li>
                         <li className="sidebarListItem">
-                            <DescriptionOutlined className="sidebarIcon"/>
-                                Saved Reports
+                            <Link to ="/saved-reports" style={{textDecoration:"none", color:"white"}}>
+                                <DescriptionOutlined className="sidebarIcon"/>
+                                    Saved Reports
+                            </Link>
                         </li>
                         <li className="sidebarListItem">
                             <DescriptionOutlined className="sidebarIcon"/>

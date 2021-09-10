@@ -5,7 +5,7 @@ import { Visibility } from '@material-ui/icons';
 function WidgetSm() {
     const [users, setUsers] = useState([]);
 
-    useEffect(() => {
+  /*   useEffect(() => {
      
 
           axios.get("http://localhost:5000/usersnew/displayusers").then((res) => {
@@ -16,7 +16,7 @@ function WidgetSm() {
             alert(err.response.data.msg);
           });
       }, []);
-    
+     */
     return (
         <div className="widgetSm">
             <span className="widgetSmTitle">Top Customers</span>

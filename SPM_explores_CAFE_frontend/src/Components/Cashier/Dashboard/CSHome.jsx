@@ -1,7 +1,7 @@
 import React from 'react'
 import FeaturedInfo from '../featuredInfo/FeaturedInfo';
 import './CSHome.css';
-import Charts from '../Charts/Charts';
+import Charts from '../Charts/csCharts';
 import WidgetSm from '../Widgets/WidgetSm/WidgetSm';
 import WidgetLg from '../Widgets/WidgetLg/WidgetLg';
 import {revenueData} from './DummyData';

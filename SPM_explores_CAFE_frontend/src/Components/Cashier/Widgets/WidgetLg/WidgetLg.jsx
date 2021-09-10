@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import './WidgetLg.css';
 import axios from "axios";
+import {GlobalState} from '../../../../GlobalState'
 function WidgetLg() {
     const [products,setProducts] = useState([]);
 
-    useEffect(() => {
+  /*   useEffect(() => {
         axios.get("http://localhost:5000/product/getAll").then((res) => {
             console.log(res.data);
             setProducts(res.data);
@@ -13,7 +14,7 @@ function WidgetLg() {
             alert(err.response.data.msg);
           });
 
-      }, []);
+      }, []); */
     
     return (
         <div className="widgetLg">

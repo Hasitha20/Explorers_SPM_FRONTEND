@@ -3,8 +3,9 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import {DataProvider} from './GlobalState'
 import Header from './components/cashier/Headers/Header.jsx';
 import Sidebar from './components/cashier/sidebar/Sidebar';
-import CSHome from './components/cashier/Dashboard/CSHome';
+
 import './App.css'
+import Pages from './components/Pages/Pages';
 function App() {
   return (
     <DataProvider>
@@ -13,7 +14,7 @@ function App() {
           <Header/>
             <div className="container">
               <Sidebar/>
-              <CSHome/>
+              <Pages/>
             </div>
         </div>
       </Router>
