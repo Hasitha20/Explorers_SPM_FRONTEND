@@ -13,6 +13,8 @@ function FoodItem({food}) {
                <img src={food.images.url} alt="" /> 
 
                 <div className="food_boxs">
+                    {/* //class name changed */}
+
                     <h2 name={food.name}>{food.name}</h2>
                     <span>Rs.{food.price}</span>
                     <p>{food.description}</p>
