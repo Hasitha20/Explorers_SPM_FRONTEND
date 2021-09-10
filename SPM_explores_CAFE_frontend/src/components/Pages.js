@@ -4,7 +4,7 @@ import DashBoard from './mainPages/manager/dashboard/DashBoard'
  
 // import CreateCategory from './mainPages/manager/category/CreateCategory'
 import Menu from './mainPages/user/menu/Menu'
-import Login from './mainPages/user/auth/Login'
+import LoginU from './mainPages/user/auth/LoginU'
 import Register from './mainPages/user/auth/Register'
 import Cart from './mainPages/user/cart/Cart'
 import DetailProduct from './mainPages/user/detailProduct/DetailProduct'
@@ -29,7 +29,7 @@ function Pages(){
 
             <Route path="/menu" exact component={Menu}/>
             <Route path="/detail/:id" exact component={DetailProduct}/>
-            <Route path="/login" exact component={Login}/>
+            <Route path="/login" exact component={LoginU}/>
             <Route path="/register" exact component={Register}/>
             <Route path="/cart" exact component={Cart}/>
  
@@ -40,7 +40,7 @@ function Pages(){
 
             {/* <Route path="/category/category_detail/:id" exact component={CreateCategory} /> */}
 
-            <Route path='/login_employee' exact component={Login}/>
+            {/* <Route path='/login_employee' exact component={Login}/> */}
  
             
         </Switch>
