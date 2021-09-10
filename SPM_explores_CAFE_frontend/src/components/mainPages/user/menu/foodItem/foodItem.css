@@ -1,8 +1,8 @@
-.food_card{
+.food_cards{
     /* max-width: 700px; */
-    width: 360px;
+    width: 370px;
     overflow: hidden;
-    height: 540px;
+    height: 560px;
     padding: 15px;
     box-shadow: 0 0 15px #ddd;
     border-spacing: 30px;
@@ -12,14 +12,14 @@
     background-color: black;
 }
 
-.food_card img{
+.food_cards img{
     width: 100%;
     height: 300px;
     display: block;
     object-fit: cover;
 }
 
-.food_box h2{
+.food_boxs h2{
     width: 100%;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -28,7 +28,7 @@
     cursor: pointer;
     color: red;
 }
-.food_card span{
+.food_cards span{
     color: white;
 }
 
@@ -42,13 +42,13 @@
     color: black;
 }
 
-.row_btn{
+.row_btns{
     width: 20%;
     margin-top: 10%;
     display: flex;
     justify-content: space-between;
 }
-.row_btn a{
+.row_btns a{
     width: 350%;
     text-align: center;
     text-transform: uppercase;
@@ -59,7 +59,7 @@
 
 }
 
-#btn_view{
+#btns_view{
     background: red;
     margin-right: 25px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -67,7 +67,7 @@
     margin-left: 252px;
     text-decoration: none;
 }
-#btn_buy{
+#btns_buy{
     background: rgb(215, 211, 219);
     margin-right: 5px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

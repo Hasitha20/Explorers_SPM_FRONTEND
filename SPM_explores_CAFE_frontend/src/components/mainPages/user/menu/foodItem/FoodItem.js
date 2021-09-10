@@ -7,23 +7,23 @@ function FoodItem({food}) {
         
       
         
-        <div className="food_card" >
+        <div className="food_cards" >
                 
       
                <img src={food.images.url} alt="" /> 
 
-                <div className="food_box">
+                <div className="food_boxs">
                     <h2 name={food.name}>{food.name}</h2>
                     <span>Rs.{food.price}</span>
                     <p>{food.description}</p>
                     <span>Intregents : {food.ingredients}</span>
 
                 </div>
-                <div className="row_btn">
-                    <Link id="btn_buy" to="/login">
+                <div className="row_btns">
+                    <Link id="btns_buy" to="/login">
                         Buy
                     </Link>
-                    <Link id="btn_view" to={`/detail/${food._id}`}>
+                    <Link id="btns_view" to={`/detail/${food._id}`}>
                         View
                     </Link>
                     
