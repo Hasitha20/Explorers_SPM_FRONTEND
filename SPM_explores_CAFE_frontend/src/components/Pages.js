@@ -4,8 +4,10 @@ import CreateCategory from './mainPages/manager/category/createCategory/CreateCa
 import Login from './login/LoginEmployee'
 import EmployeeList from './mainPages/manager/employee/manageEmployee/EmployeeList'
 import TestCompo from './mainPages/Test'
-import Dashboard_manager from '../components/mainPages/manager/dashboard/DashBoard'
-import AddNewEmployee_manager from '../components/mainPages/manager/employee/addNewEmployee/AddNewEmployee'
+//import Dashboard_manager from '../components/mainPages/manager/dashboard/DashBoard'
+import Dashboard_manager from '../Components/mainPages/manager/dashboard/DashBoard'
+//import AddNewEmployee_manager from '../components/mainPages/manager/employee/addNewEmployee/AddNewEmployee'
+import AddNewEmployee_manager from '../Components/mainPages/manager/employee/addNewEmployee/AddNewEmployee'
 
 function Pages(){
     //const state = useContext(GlobalState)

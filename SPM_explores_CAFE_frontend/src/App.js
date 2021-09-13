@@ -1,8 +1,9 @@
 import React from 'react'
 import {BrowserRouter as Router} from 'react-router-dom'
 import './index.css'
-import SideBar from './components/header/manager/SideBar';
-import Pages from './components/Pages';
+//import SideBar from './components/header/manager/SideBar';
+import SideBar from './Components/header/manager/SideBar'
+import Pages from './Components/Pages'
 import { DataProvider } from './Globalstate'
 
 function App() {

@@ -18,6 +18,7 @@ export const SidebarData = [
         icon: <BsIcons.BsPeopleFill />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
+        path: '#',
         subNav: [
             {
                 title: 'Add employee',
@@ -36,6 +37,7 @@ export const SidebarData = [
         icon: <IoIcons5.IoFastFood />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
+        path: '#',
         subNav: [
             {
                 title: 'Today Menu',
@@ -64,6 +66,7 @@ export const SidebarData = [
         icon: <IoIcons.IoIosPaper />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
+        path: '#',
         subNav: [
             {
                 title: 'User Reports',
