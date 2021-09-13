@@ -22,7 +22,7 @@ export const SidebarData = [
         subNav: [
             {
                 title: 'Add employee',
-                path: '/messages',
+                path: '/add_employee_manager',
                 icon: <BsIcons.BsPeopleFill />,
             },
             {

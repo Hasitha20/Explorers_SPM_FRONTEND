@@ -8,6 +8,7 @@ import TestCompo from './mainPages/Test'
 import Dashboard_manager from '../Components/mainPages/manager/dashboard/DashBoard'
 //import AddNewEmployee_manager from '../components/mainPages/manager/employee/addNewEmployee/AddNewEmployee'
 import AddNewEmployee_manager from '../Components/mainPages/manager/employee/addNewEmployee/AddNewEmployee'
+import CategoryList from '../Components/mainPages/manager/category/categoryView/CategoryList'
 
 function Pages(){
     //const state = useContext(GlobalState)
@@ -16,6 +17,7 @@ function Pages(){
         <Switch>
             <Route path="/category/addNewCategory" exact component={CreateCategory}/>
             <Route path="/category/category_detail/:id" exact component={CreateCategory} />
+            <Route path="/category/category_list" exact component={CategoryList} />
             {/* <Route path='/category/category_list' exact component={CategoryList}/>*/}
 
             <Route path="/messages" exact component={TestCompo} />
