@@ -4,6 +4,7 @@ import Dashboard from './dashboard/Dashboard'
 import Foods from './Menu/Foods'
 import DetailFood from './Details/DetailFood'
 import AddFoods from './Menu/AddFoods'
+import MessagesKM from '../KitchenManager/MessagesKM'
  
 
 function Pages(){
@@ -14,6 +15,7 @@ function Pages(){
             <Route path="/detail/:id" exact component={DetailFood}/>
             <Route path="/menu/addnewfood" exact component={AddFoods}/>
             <Route path="/edit/:id" exact component={AddFoods}/>
+            <Route path="/messages" exact component={MessagesKM}/>
              
         </Switch>
     )
