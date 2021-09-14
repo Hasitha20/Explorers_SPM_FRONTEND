@@ -29,10 +29,11 @@ function KMItemC({category}) {
             </div>
 
             <div className="row_btn">
-                <Link id="btn_buy" to={`category_detail/${category._id}`} >
+                {/* <Link id="btn_buy" to={`category_detail/${category._id}`} >
                     Edit
-                </Link>
-                <Link to="#" onClick={deleteCategory} id="btn_view">Remove</Link>
+                </Link> */}
+                <a id="btn_view" href={`/detailc/${category._id}`}>View</a>
+                {/* <Link to="#" onClick={deleteCategory} id="btn_view">Remove</Link> */}
             </div>
         </div>
     )

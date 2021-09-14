@@ -25,6 +25,9 @@ code {
 /*--------------------- Detail Food --------------------------*/
 @import url("./Components/KitchenManager/Details/detailProducts.css");
 
+/*--------------------- Detail Category --------------------------*/
+@import url("./Components/KitchenManager/Details/detailCategoryKM.css");
+
 /*--------------------- Add Food --------------------------*/
 @import url("./Components/KitchenManager/Menu/addFoods.css");
 
