@@ -33,7 +33,7 @@ export const DataProvider = ({children}) =>{
     const state = {
         token: [token, setToken],
         reportsAPI: ReportsAPI(),
-        userAPI: CSUserAPI()
+        csuserAPI: CSUserAPI(token)
     }
     return (
         <GlobalState.Provider value={state}>

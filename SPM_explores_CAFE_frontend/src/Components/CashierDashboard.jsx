@@ -6,8 +6,7 @@ function CashierDashboard() {
     return (
         <div>
               <div className="container">
-              <Sidebar/>
-              <Pages/>
+              Normal login
             </div>
         </div>
     )

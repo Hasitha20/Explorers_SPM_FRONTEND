@@ -10,11 +10,12 @@ import Paper from '@material-ui/core/Paper';
 import { Button } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
+import Loading from '../../../../Pages/Utils/Loading/Loading';
 
 function CSSavedReportList() {
     const state = useContext(GlobalState)
     const [reports] = state.reportsAPI.reports
-
+    
     console.log(state)
 
     
@@ -22,6 +23,7 @@ function CSSavedReportList() {
 
 
     return (
+      <>
         <TableContainer component={Paper}>
       <Table  aria-label="simple table">
         <TableHead>
@@ -50,6 +52,8 @@ function CSSavedReportList() {
         </TableBody>
       </Table>
     </TableContainer>
+    {reports.length === 0 && <Loading/>}
+    </>
     )
 }
 

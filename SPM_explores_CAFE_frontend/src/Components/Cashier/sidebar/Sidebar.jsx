@@ -12,7 +12,7 @@ function Sidebar() {
                     <h3 className="sidebarTitle">Dashboard</h3>
                     <ul className="sidebarList">
                         <li className="sidebarListItem active">
-                            <Link to ="/" style={{textDecoration:"none", color:"white"}}>
+                            <Link to ="/cs-dashboard" style={{textDecoration:"none", color:"white"}}>
                             <Home className="sidebarIcon"/>
                                 Home
                             </Link>

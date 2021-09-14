@@ -11,14 +11,14 @@ function CSUserAPI(token) {
         if(token){
             const getUser = async ()=>{
                 try{
-                    const res = await axios.get('/user/infor', {
+                    const res = await axios.get('/csuser/infor', {
                         headers: {Authorization: token}
                     })
-
+                    
                     setIsLogged(true)
-                    res.data.role === 1 ? setIsCashier(true) : setIsCashier(false)
+                    res.data.role === 2 ? setIsCashier(true) : setIsCashier(false)
                    
-                    setCart(res.data.cart)
+                    
                 }catch(err){
                     alert(err.response.data.msg)
                 }
