@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import * as IoIcons5 from 'react-icons/io5'
 import { GlobalState } from '../GlobalStateKM'
-import { Link } from 'react-router-dom'
 import FoodItem from '../item/FoodItem'
 
 function Foods() {

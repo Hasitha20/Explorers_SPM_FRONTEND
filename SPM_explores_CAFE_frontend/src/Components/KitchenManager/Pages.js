@@ -5,6 +5,10 @@ import Foods from './Menu/Foods'
 import DetailFood from './Details/DetailFood'
 import AddFoods from './Menu/AddFoods'
 import MessagesKM from '../KitchenManager/MessagesKM'
+import KMListC from '../KitchenManager/category/view/KMListC'
+
+
+
  
 
 function Pages(){
@@ -16,6 +20,8 @@ function Pages(){
             <Route path="/menu/addnewfood" exact component={AddFoods}/>
             <Route path="/edit/:id" exact component={AddFoods}/>
             <Route path="/messages" exact component={MessagesKM}/>
+            <Route path="/kmcategory" exact component={KMListC}/>
+             
              
         </Switch>
     )

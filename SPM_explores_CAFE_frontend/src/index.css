@@ -27,4 +27,9 @@ code {
 
 /*--------------------- Add Food --------------------------*/
 @import url("./Components/KitchenManager/Menu/addFoods.css");
+
+
+/*--------------------- view Category  List --------------------------*/
+@import url("./Components/KitchenManager/category/view/kmlistc.css");
+
  

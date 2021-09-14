@@ -21,6 +21,7 @@ function AddFoods() {
     const [food, setFood] = useState(initialState)
     const [images, setImages] = useState(false)
     const [loading, setLoading] = useState(false)
+    // const [categories] =
 
     const param = useParams()
 

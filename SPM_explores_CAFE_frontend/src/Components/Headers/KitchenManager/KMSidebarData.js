@@ -73,5 +73,9 @@ export const SidebarData = [
         title: 'Messages',
         path: '/messages',
         icon: <AiIcons.AiOutlineMessage />
+    },{
+        title: 'Categories',
+        path: '/kmcategory',
+        icon: <AiIcons.AiOutlineMessage />
     },
 ]
