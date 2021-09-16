@@ -13,7 +13,7 @@ function SingleEmp({employee}) {
                 <td>{employee.emergencyPhone}</td>
                 <td>{employee.dutyType}</td>
                 <td>{employee.status}</td>
-                <td><Link to={`/emp/${employee._id}`}>View</Link></td>                
+                <td><Link to={`/empEdit/${employee._id}`}>View</Link></td>                
             </tr>
         
     )

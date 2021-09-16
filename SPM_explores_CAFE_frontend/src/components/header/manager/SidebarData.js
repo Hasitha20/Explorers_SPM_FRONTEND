@@ -58,7 +58,7 @@ export const SidebarData = [
     },
     {
         title: 'Messages',
-        path: '/messages',
+        path: '/messages_maanger',
         icon: <AiIcons.AiOutlineMessage />
     },
     {
@@ -87,7 +87,7 @@ export const SidebarData = [
     },
     {
         title: 'Customers',
-        path: '/messages',
+        path: '/customerManagement',
         icon: <BsIcons.BsPeopleCircle />
     }
 ]

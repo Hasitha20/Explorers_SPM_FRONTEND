@@ -43,3 +43,11 @@ code {
 /*@import url("./components/mainPages/manager/dashboard/dashboard.css");*/
 @import url("./Components//mainPages/manager/dashboard/dashboard.css");
 
+
+/*--------------------- customer feedbacks view - manager --------------------------*/
+@import url("./Components//mainPages/manager/messages/manager_messages.css");
+
+/*--------------------- customer list - manager --------------------------*/
+@import url("./Components//mainPages/manager/customers/customerList.css");
+
+

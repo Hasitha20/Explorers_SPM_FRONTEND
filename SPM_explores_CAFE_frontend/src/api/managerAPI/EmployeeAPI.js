@@ -26,7 +26,7 @@ function EmployeeAPI(token) {
 
                     setIsLogged(true)
                 } catch (err) {
-                    alert(err.responce.data.msg)
+                    alert(err.responce)
                 }
             }
             getEmployee()

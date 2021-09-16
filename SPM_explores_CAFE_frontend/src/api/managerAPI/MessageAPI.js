@@ -7,7 +7,7 @@ function MessageAPI() {
 
     const getMessageList = async () => {
         const res = await axios.get('/api/message')
-        console.log(res.data)
+        setMessage(res.data)
     }
 
     useEffect(() => {

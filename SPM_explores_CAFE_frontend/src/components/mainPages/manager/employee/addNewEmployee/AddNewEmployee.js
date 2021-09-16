@@ -12,6 +12,17 @@ const styles = {
       width:'90%'
     },
   };
+const initialState = {
+    name: '', 
+    designation: '', 
+    email: '', 
+    phone: '', 
+    gender: '', 
+    emergencyPhone: '', 
+    dutyType: '', 
+    userName: '', 
+    password: ''
+}
 
 function AddNewEmployee() {
     const [employee, setEmployee] = useState({
@@ -37,8 +48,11 @@ function AddNewEmployee() {
             await axios.post('/emp/register', {...employee})
 
             localStorage.setItem('firstLogin', true)
+
+            alert("New Employee Added...")
+            setEmployee(initialState)
             
-            window.location.href = "/category/category_list";
+            //window.location.href = "/category/category_list";
         } catch (err) {
             alert(err.response.data.msg)
         }
