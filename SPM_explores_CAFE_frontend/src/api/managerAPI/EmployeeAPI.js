@@ -4,7 +4,8 @@ import axios from 'axios'
 function EmployeeAPI(token) {
     const [isLogged, setIsLogged] = useState(false)
     const [employeeList, setEmployeeList] = useState([])
-    const [callback] = useState(false)
+    const [allEmployees, setAllEmployees] = useState([])
+    const [callback, setCallback] = useState(false)
     
 
     const getEmployeesInformations = async () => {
@@ -12,8 +13,14 @@ function EmployeeAPI(token) {
         //setUsersList(res.data)
         setEmployeeList(res.data.emps)
     }
+    const getEmpList = async () => {
+        const resEmp = await axios.get('/emp/getEmployee')
+        //console.log(resEmp.data)
+        setAllEmployees(resEmp.data)
+    }
     useEffect(() => {
         getEmployeesInformations()
+        getEmpList()
     },  [callback])
 
     useEffect(() => {
@@ -35,7 +42,9 @@ function EmployeeAPI(token) {
 
     return {
         isLogged: [isLogged, setIsLogged],
-        employeeList: [employeeList, setEmployeeList]
+        employeeList: [employeeList, setEmployeeList],
+        allEmployees: [allEmployees, setAllEmployees],
+        callback: [callback, setCallback],
     }
 }
 

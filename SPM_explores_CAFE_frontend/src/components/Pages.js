@@ -11,7 +11,7 @@ import AddNewEmployee_manager from '../Components/mainPages/manager/employee/add
 import CategoryList from '../Components/mainPages/manager/category/categoryView/CategoryList'
 import ReplyMessage from './mainPages/manager/messages/reply/ReplyMessage'
 import CustomerManagement from './mainPages/manager/customers/CustomerManagement'
-import ChangeEmpDetails from './mainPages/manager/employee/manageEmployee/changeEmpDetails/ChangeEmpDetails'
+import ManageEmployeeLeave from './mainPages/manager/employee/manageEmployee/manageEmployeeLeave/ManageEmployeeLeave'
 
 function Pages(){
     //const state = useContext(GlobalState)
@@ -31,7 +31,7 @@ function Pages(){
             {/*<Route path="/employee/add_employee" exact component={AddNewEmployee} />*/}
             <Route path="/add_employee_manager" exact component={AddNewEmployee_manager} />
             <Route path="/employee/manage_emp" exact component={EmployeeList} />
-            {/*<Route path="/message_detail/:id" component={ReplyMessage} />*/}
+            <Route path="/empEdit/:id" component={ManageEmployeeLeave} />
 
             <Route path="/customerManagement" exact component={CustomerManagement} />
 
