@@ -3,6 +3,7 @@ import axios from 'axios'
 
 function ReportsAPI() {
     const [reports, setReports] = useState([])
+    const [callback, setCallback] = useState(false)
 
     const getReports = async () =>{
         const res = await axios.get('api/savedreport')
@@ -16,7 +17,8 @@ function ReportsAPI() {
 
 
     return {
-        reports: [reports, setReports]
+        reports: [reports, setReports],
+        callback: [callback, setCallback]
     }
 }
 
