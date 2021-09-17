@@ -6,12 +6,14 @@ function EmployeeAPI(token) {
     const [employeeList, setEmployeeList] = useState([])
     const [allEmployees, setAllEmployees] = useState([])
     const [callback, setCallback] = useState(false)
-    
+    const [sort, setSort] = useState('')
+    const [search, setSearch] = useState('')
 
     const getEmployeesInformations = async () => {
-        const res = await axios.get('/emp/getEmpList')
+        const res = await axios.get(`/emp/getEmpList?limit=${sort}&name[regex]=${search}`)
         //setUsersList(res.data)
         setEmployeeList(res.data.emps)
+        
     }
     const getEmpList = async () => {
         const resEmp = await axios.get('/emp/getEmployee')
@@ -21,7 +23,7 @@ function EmployeeAPI(token) {
     useEffect(() => {
         getEmployeesInformations()
         getEmpList()
-    },  [callback])
+    },  [callback, sort, search])
 
     useEffect(() => {
         if(token){
@@ -45,6 +47,8 @@ function EmployeeAPI(token) {
         employeeList: [employeeList, setEmployeeList],
         allEmployees: [allEmployees, setAllEmployees],
         callback: [callback, setCallback],
+        sort: [sort, setSort],
+        search: [search, setSearch]
     }
 }
 

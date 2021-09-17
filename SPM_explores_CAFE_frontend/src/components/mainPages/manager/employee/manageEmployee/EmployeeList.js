@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import * as BsIcons from 'react-icons/bs'
 import { GlobalState } from '../../../../../Globalstate'
 import SingleEmp from './SingleEmp'
+import Filter from './Filter'
 
 function EmployeeList() {
     const state = useContext(GlobalState)
@@ -18,6 +19,7 @@ function EmployeeList() {
 
             <div className="emp-manage-page">
                 <h4>There are {employees.length} Employees</h4>
+                <Filter/> <br/>
                 <table>
                     <thead>
                         <tr>
