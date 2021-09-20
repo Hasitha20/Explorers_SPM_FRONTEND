@@ -28,13 +28,12 @@ const initialState= {
   date:new Date(),
   start_time:new Date(),
   end_time: new Date(),
-  orders_count:'',
-  complete_orders_count:'',
-  canceled_orders_count:'',
-  revenue:'',
-  other_payments:'',
-  total_suppliers_charges:'',
-  _id: ''
+  orders_count: 8,
+  complete_orders_count:4,
+  canceled_orders_count:9,
+  revenue:1200,
+  other_payments:7,
+  total_suppliers_charges:89
 }
 
 function CSCreateReport() {
@@ -50,14 +49,15 @@ function CSCreateReport() {
   const history = useHistory()
   const param = useParams()
 
+  const [reports] = state.reportsAPI.reports
   const [onEdit, setOnEdit] = useState(false)
   const [callback, setCallback] = state.reportsAPI.callback
-  const [reports] = state.reportsAPI.reports
+  const [scallback, setsCallback] = state.csSubmitReportsAPI.callback;
 
   const [date, setDate] = useState(new Date());
   const [start_time, setstart_time] = useState(new Date());
   const [end_time, setend_time] = useState(new Date());
-  const [id, setID] = useState('')
+  
 
   useEffect(() =>{
     if(param.id){
@@ -94,33 +94,37 @@ function CSCreateReport() {
     setend_time(end_time);
   }
   const handleSubmit = async e =>{
-    e.preventDefault()
-    try{
-        if(!isCashier) return alert("You are not an admin")
+        e.preventDefault()
+        try{
         
+            if(onEdit){
+                await axios.put(`/api/savedreport/${savedreport._id}`, {...savedreport, date , start_time, end_time})
+            }else{
+                await axios.post('/api/savedreport', {...savedreport, date, start_time, end_time})
+            }
+            setCallback(!callback)
+            history.push('/saved-reports')
+            
 
-        if(onEdit){
-            await axios.put(`/api/savedreport/${savedreport._id}`, {...savedreport}, {
-                headers: {Authorization:token}
-            })
-        }else{
-            await axios.post('/api/savedreport', {...savedreport, date, start_time, end_time}, {
-                headers: {Authorization:token}
-            })
-        }
-        setCallback(!callback)
-        history.push("/saved-reports")
-        
-
-    }catch(err){
-        alert(err.response.data.msg) 
+        }catch(err){
+            alert(err.response.data.msg) 
+        }  
     }
-}
+    const submitReport = async e=>{
+        e.preventDefault()
+        try{
+            await axios.post(`/api/submitreport`, {...savedreport, date , start_time, end_time})
+        }catch(err){
+            alert(err.response.data.msg) 
+        }
+        setsCallback(!scallback)
+        history.push('/submitted-reports')
+    }
     return (
         <div className="createReport">
         <div style={styles.outer} >
          
-          <form>
+          <form onSubmit={handleSubmit}>
           <button><Link to ="/saved-reports"><ArrowBackIosIcon></ArrowBackIosIcon></Link></button>
           <h1>Add New Entry</h1>
               <div className="inputFields">
@@ -136,7 +140,7 @@ function CSCreateReport() {
                               id="date-picker-inline"
                               label=""
                               name="date"
-                              value= {date}
+                              value= {savedreport.date}
                               minDate={new Date()} 
                               onChange={handleDateChange} 
                               KeyboardButtonProps={{
@@ -150,7 +154,7 @@ function CSCreateReport() {
                               id="time-picker"
                               label=""
                               name="start_time"
-                              value={start_time}
+                              value={savedreport.start_time}
                               onChange={handleStarttime}
                               KeyboardButtonProps={{
                                   'aria-label': 'change time',
@@ -163,7 +167,7 @@ function CSCreateReport() {
                               id="time-picker"
                               label=""
                               name="end_time"
-                              value={end_time}
+                              value={savedreport.end_time}
                               onChange={handleEndtime}
                               KeyboardButtonProps={{
                                   'aria-label': 'change time',
@@ -220,11 +224,11 @@ function CSCreateReport() {
                               <button onClick={clearAllFields} >Clear</button>
                       </div>
                       <div class="grid-item">
-                            <button type="submit" onSubmit={handleSubmit}>{onEdit? "Update" : "Create"}</button>
+                            <button type="submit">{onEdit? "Update" : "Create"}</button>
                       </div>
-                      {/* <div class="grid-item">
-                              <button onClick={submitData} >Submit</button>
-                      </div> */} 
+                     <div class="grid-item">
+                              <button onClick={submitReport} >Submit</button>
+                      </div>
                       
                   </div>         
               </div>

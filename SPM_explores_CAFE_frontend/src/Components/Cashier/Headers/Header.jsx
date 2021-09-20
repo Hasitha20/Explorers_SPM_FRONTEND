@@ -17,7 +17,7 @@ import Loading from '../../Pages/Utils/Loading/Loading';
 
 function Header() {
     const state = useContext(GlobalState)
-    
+    console.log(state)
     const [isLogged] = state.csuserAPI.isLogged;
     const [isCashier] = state.csuserAPI.isCashier;
     const [open, setOpen] = React.useState(false);
@@ -72,7 +72,7 @@ function Header() {
                 </div>
                 <div className="topRight">
                        {
-                         isLogged ?  <>
+                         isCashier ?  <>
                          <div className="topbarIconsContainer">
                               <FaRegBell size={30}/>
                               <span className="topIconBag">

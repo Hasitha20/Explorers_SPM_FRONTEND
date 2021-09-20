@@ -72,8 +72,10 @@ function Sidebar() {
                             </Link>
                         </li>
                         <li className="sidebarListItem">
+                            <Link to ="/submitted-reports" style={{textDecoration:"none", color:"white"}}>
                             <DescriptionOutlined className="sidebarIcon"/>
                                 Submitted Reports
+                            </Link>
                         </li>
                     </ul>
                 </div>

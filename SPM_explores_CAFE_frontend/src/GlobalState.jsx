@@ -2,6 +2,7 @@ import React, {createContext, useState, useEffect} from "react";
 import ReportsAPI from "./components/cashier/api/ReportsAPI";
 import axios from 'axios'
 import CSUserAPI from "./components/cashier/api/CSUserAPI";
+import CSSubmitReportsAPI from "./components/cashier/api/CSSubmitReportsAPI";
 
 export const GlobalState= createContext()
 
@@ -33,7 +34,9 @@ export const DataProvider = ({children}) =>{
     const state = {
         token: [token, setToken],
         reportsAPI: ReportsAPI(),
-        csuserAPI: CSUserAPI(token)
+        csSubmitReportsAPI: CSSubmitReportsAPI(),
+        csuserAPI: CSUserAPI(token),
+        
     }
     return (
         <GlobalState.Provider value={state}>
