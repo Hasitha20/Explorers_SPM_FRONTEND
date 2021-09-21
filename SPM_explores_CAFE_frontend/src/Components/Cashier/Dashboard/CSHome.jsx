@@ -5,9 +5,9 @@ import Charts from '../Charts/csCharts';
 import WidgetSm from '../Widgets/WidgetSm/WidgetSm';
 import WidgetLg from '../Widgets/WidgetLg/WidgetLg';
 import {revenueData} from './DummyData';
-import { GlobalState } from '../../../GlobalState';
+//import { GlobalState } from '../../../GlobalState';
 function CSHome() {
-    const state = useContext(GlobalState);
+    //const state = useContext(GlobalState);
     
     return (
         <div className="cshome">

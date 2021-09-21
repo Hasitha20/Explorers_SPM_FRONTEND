@@ -1,13 +1,12 @@
 import React from 'react'
-import Header from '../components/cashier/Headers/Header';
+import Header from './cashier/Headers/Header'
 
-function cshome() {
+function home() {
     return (
         <div>
-            
-            CSHome
+            <Header/>
         </div>
     )
 }
 
-export default cshome
+export default home

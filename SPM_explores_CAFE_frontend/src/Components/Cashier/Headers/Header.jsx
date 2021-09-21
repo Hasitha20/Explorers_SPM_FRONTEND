@@ -13,12 +13,12 @@ import {BiDotsVerticalRounded} from "react-icons/bi";
 import {FaRegBell} from "react-icons/fa";
 import axios from 'axios'
 import {Link} from 'react-router-dom'
-import Loading from '../../Pages/Utils/Loading/Loading';
+/* import Loading from '../../Pages/Utils/Loading/Loading'; */
 
 function Header() {
     const state = useContext(GlobalState)
     console.log(state)
-    const [isLogged] = state.csuserAPI.isLogged;
+    /* const [isLogged] = state.csuserAPI.isLogged; */
     const [isCashier] = state.csuserAPI.isCashier;
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);

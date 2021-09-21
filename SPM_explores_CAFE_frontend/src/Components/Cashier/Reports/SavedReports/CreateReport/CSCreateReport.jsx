@@ -42,9 +42,6 @@ function CSCreateReport() {
   const [savedreport, setSavedReport] = useState(initialState)
   
 
-  const [isCashier] = state.csuserAPI.isCashier
-  const [token] = state.token
-
   
   const history = useHistory()
   const param = useParams()
@@ -98,11 +95,15 @@ function CSCreateReport() {
         try{
         
             if(onEdit){
-                await axios.put(`/api/savedreport/${savedreport._id}`, {...savedreport, date , start_time, end_time})
+                await axios.put(`/api/savedreport/${savedreport._id}`, {...savedreport, date , start_time, end_time});
+                 alert("Report updated successfully")
+                
             }else{
-                await axios.post('/api/savedreport', {...savedreport, date, start_time, end_time})
+                await axios.post('/api/savedreport', {...savedreport, date, start_time, end_time});
+               alert("Report added successfully")
             }
-            setCallback(!callback)
+            setCallback(!callback);
+            
             history.push('/saved-reports')
             
 

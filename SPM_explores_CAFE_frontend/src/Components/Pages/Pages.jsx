@@ -7,10 +7,10 @@ import CSLogin from "../cashier/Auth/CSLogin";
 import CSRegister from "../cashier/Auth/CSRegister";
 import NotFound from "./Utils/NotFound";
 import CSSavedReportList from "../cashier/Reports/SavedReports/ReportList/CSSavedReportList";
-import CashierDashboard from "../CashierDashboard";
 import cshome from "../cshome";
 import CSCreateReport from "../cashier/Reports/SavedReports/CreateReport/CSCreateReport";
 import CSSubmitReportList from "../cashier/Reports/SubmittedReports/CSSubmitReportList";
+import CSOrdersList from "../cashier/CSOrders/CSOrdersList";
 
 function Pages() {
     const state = useContext(GlobalState)
@@ -30,6 +30,10 @@ function Pages() {
                 <Route path="/submitted-reports" exact component={isCashier ? CSSubmitReportList: NotFound}></Route>
                 <Route path="/create-report" exact component={isCashier ? CSCreateReport: NotFound}></Route>
                 <Route path="/edit-report/:id" exact component={isCashier ? CSCreateReport: NotFound}></Route>
+
+                <Route path="/orders-list/" exact component={isCashier ? CSOrdersList: NotFound}></Route>
+
+
 
                 <Route path="*" exact component={NotFound}></Route>
                 

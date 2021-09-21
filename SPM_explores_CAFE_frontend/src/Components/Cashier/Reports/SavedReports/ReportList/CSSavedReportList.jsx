@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, {useContext, useState} from 'react'
 import {GlobalState} from '../../../../../GlobalState'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -7,21 +7,20 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { Button } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import Loading from '../../../../Pages/Utils/Loading/Loading';
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import ReportFilters from './ReportFilters';
+import Button from 'react-bootstrap/Button';
 
 
 function CSSavedReportList() {
     const state = useContext(GlobalState)
     const [reports] = state.reportsAPI.reports
-    const [loading, setLoading] = useState(false)
+    const [ setLoading] = useState(false)
     const [callback, setCallback] = state.reportsAPI.callback
-    const [isCashier] = state.csuserAPI.isCashier
     const [token] = state.token
     
     console.log(state)
@@ -42,12 +41,12 @@ function CSSavedReportList() {
       }catch(err){
           alert(err.response.data.msg)
       }
-  }
+     }
 
 
     return (
       <>
-      <button><Link to = "/create-report">New Entry</Link></button>
+      <button variant="danger" size="lg"><Link to = "/create-report">New Entry</Link></button>
       <ReportFilters/>
       {
                 <TableContainer component={Paper} >

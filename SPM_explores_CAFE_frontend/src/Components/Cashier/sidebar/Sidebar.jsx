@@ -21,8 +21,10 @@ function Sidebar() {
                     <h3 className="sidebarTitle">Orders</h3>
                     <ul className="sidebarList">
                         <li className="sidebarListItem">
+                        <Link to ="/orders-list" style={{textDecoration:"none", color:"white"}}>
                             <CardTravelOutlined className="sidebarIcon"/>
                                 OrdersList
+                        </Link>
                         </li>
                         <li className="sidebarListItem">
                             <CardTravelOutlined className="sidebarIcon"/>

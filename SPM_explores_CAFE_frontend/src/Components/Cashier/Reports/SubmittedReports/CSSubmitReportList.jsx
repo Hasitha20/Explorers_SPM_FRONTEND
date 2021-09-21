@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, {useContext} from 'react'
 import {GlobalState} from '../../../../GlobalState'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -11,16 +11,16 @@ import { Button } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import Loading from '../../../Pages/Utils/Loading/Loading';
 import { Link } from 'react-router-dom';
-import axios from 'axios'
+/* import axios from 'axios' */
 import ReportFilters from '../SavedReports/ReportList/ReportFilters';
 
 function CSSubmitReportList() {
     const state = useContext(GlobalState)
     const [reports] = state.csSubmitReportsAPI.sreports
-    const [loading, setLoading] = useState(false)
+    /* const [loading, setLoading] = useState(false)
     const [callback, setCallback] = state.csSubmitReportsAPI.callback
     const [isCashier] = state.csuserAPI.isCashier
-    const [token] = state.token
+    const [token] = state.token */
     
     console.log(state)
 
