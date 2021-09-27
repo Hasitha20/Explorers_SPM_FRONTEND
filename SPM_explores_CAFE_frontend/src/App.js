@@ -7,8 +7,7 @@ import UserSideBar from './Components/header/user/UserSideBar'
 import Pages from './Components/Pages';
 import { DataProvider } from './Globalstate'
  
-
-// import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 // import Pages from './Components/KitchenManager/Pages';
 import SideBarKM from './Components/Headers/KitchenManager/KMSidebar'
 import './index.css'
