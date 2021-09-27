@@ -50,4 +50,9 @@ code {
 /*--------------------- customer list - manager --------------------------*/
 @import url("./Components//mainPages/manager/customers/customerList.css");
 
+/*--------------------- Reply message form - manager --------------------------*/
+@import url("./Components//mainPages/manager/messages/reply/replyMessage.css");
+
+/*--------------------- monthlyPayment - manager --------------------------*/
+@import url("./Components//mainPages/manager/employee/manageEmployee/addPayments/monthlyPayment.css");
 

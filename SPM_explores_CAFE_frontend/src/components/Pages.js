@@ -12,6 +12,9 @@ import CategoryList from '../Components/mainPages/manager/category/categoryView/
 import ReplyMessage from './mainPages/manager/messages/reply/ReplyMessage'
 import CustomerManagement from './mainPages/manager/customers/CustomerManagement'
 import ManageEmployeeLeave from './mainPages/manager/employee/manageEmployee/manageEmployeeLeave/ManageEmployeeLeave'
+import EmployeePayments from './mainPages/manager/employee/manageEmployee/addPayments/EmployeePayments'
+import AllMessagesSingleData from './mainPages/manager/messages/reply/AllMessagesSingleData'
+import AddPaymentForm from './mainPages/manager/employee/manageEmployee/addPayments/AddPaymentForm'
 
 function Pages(){
     //const state = useContext(GlobalState)
@@ -25,6 +28,7 @@ function Pages(){
 
             <Route path="/messages_maanger" exact component={MessageList} />
             <Route path="/message_detail/:id" component={ReplyMessage} />
+            <Route path="/full_message_detail/:id" component={AllMessagesSingleData} />
 
             <Route path="/dashboard_manager" exact component={Dashboard_manager} />
 
@@ -32,6 +36,8 @@ function Pages(){
             <Route path="/add_employee_manager" exact component={AddNewEmployee_manager} />
             <Route path="/employee/manage_emp" exact component={EmployeeList} />
             <Route path="/empEdit/:id" component={ManageEmployeeLeave} />
+            <Route path="/reports/addPayments" exact component={EmployeePayments} />
+            <Route path="/payment_detail/:id" component={AddPaymentForm} />
 
             <Route path="/customerManagement" exact component={CustomerManagement} />
 

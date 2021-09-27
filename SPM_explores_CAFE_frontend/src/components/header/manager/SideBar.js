@@ -90,10 +90,6 @@ export default function SideBar() {
                         marginLeft:'90px'
                     }}>Login</Link>
                 }
-                
-                
-                
-                
             </SidebarWrap>
         </SideBarNav>
         </div>

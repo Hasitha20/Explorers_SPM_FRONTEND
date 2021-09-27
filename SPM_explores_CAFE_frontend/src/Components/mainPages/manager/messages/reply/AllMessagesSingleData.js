@@ -11,10 +11,10 @@ const initialState = {
     message: ''
 }
 
-function ReplyMessage() {
+function AllMessagesSingleData() {
     const state = useContext(GlobalState)
     const param = useParams()
-    const [messages] = state.messageAPI.userMessage
+    const [messages] = state.messageAPI.allUserMessages
     const [message, setMessage] = useState(initialState)
     const [onEdit, setOnEdit] = useState(false)
 
@@ -103,4 +103,4 @@ function ReplyMessage() {
     )
 }
 
-export default ReplyMessage
+export default AllMessagesSingleData

@@ -3,20 +3,28 @@ import axios from 'axios'
 
 function MessageAPI() {
     const [message, setMessage] = useState([])
+    const [allMsg, setAllMsg] = useState([])
     const [callback, setCallback] = useState(false)
 
-    const getMessageList = async () => {
+    const getAllMessages = async () => {
+        const resMsg = await axios.get('/api/allMessages')
+        setAllMsg(resMsg.data)
+    }
+
+    const getReadMessageList = async () => {
         const res = await axios.get('/api/message')
         setMessage(res.data)
     }
 
     useEffect(() => {
-        getMessageList()
+        getReadMessageList()
+        getAllMessages()
     }, [])
 
     return {
         userMessage: [message, setMessage],
-        callback: [callback, setCallback]
+        callback: [callback, setCallback],
+        allUserMessages: [allMsg, setAllMsg]
     }
 }
  

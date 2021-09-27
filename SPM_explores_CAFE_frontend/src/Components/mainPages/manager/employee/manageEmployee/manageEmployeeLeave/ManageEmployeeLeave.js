@@ -53,8 +53,7 @@ function ManageEmployeeLeave() {
         setSingleEmp(initialState)
         alert('Change Employee duty status.')
         setCallback(!callback)
-            
-            history.push("/employee/manage_emp")
+        history.push("/employee/manage_emp")
     }
 
     return (

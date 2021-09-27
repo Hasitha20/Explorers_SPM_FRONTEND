@@ -9,7 +9,7 @@ function DashBoard() {
     const state = useContext(GlobalState)
     const [Categorys] = state.categoryAPI.categories
     const [employees] = state.employeeAPI.employeeList
-
+    const [foodsList] = state.foodsAPI.foods_manager
 
     return (
         <div className="home">
@@ -54,31 +54,34 @@ function DashBoard() {
                             Total Employees
                         </Grid>
                     </Grid>
-                    {/*<div className="main-grid">
-                        <div className="first-grid">
-                            <h2>Foods</h2>
-                            <table>
-                                <thead>
-                                    <tr style={{backgroundColor: 'white', fontSize: '23px'}}>
-                                        <th>Food Name</th>
-                                        <th>Image</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {
-                                        foods.map(foodItem => {
-                                            return <SingleFood key={foodItem._id} foodItem={foodItem} />
-                                        })
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                        <div className="second-grid">
-                            <h2> Orders</h2>
-                        </div>
-                    </div>*/}
+                    
                 </Grid>
+                
+            </div>
+            
+            <div className="second-group">
+                <div className="second-group-first-box">
+                    <h4>Latest Orders</h4>
+                </div>
+                <div className="second-group-second-box">
+                    <h4>Sales</h4>
+                </div>
+            </div>
+
+            <div className="third-group">
+                <h2>Foods</h2>
+                <div className="table-div">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Food name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            d
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     )

@@ -75,7 +75,7 @@ export const SidebarData = [
             },
             {
                 title: 'Add Payments',
-                path: '/reports/reports2',
+                path: '/reports/addPayments',
                 icon: <IoIcons.IoIosPaper />,
             },
         ]
