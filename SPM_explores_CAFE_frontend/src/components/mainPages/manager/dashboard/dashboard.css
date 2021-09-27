@@ -1,0 +1,56 @@
+.home_icon{
+    font-size: 4.5em;
+    padding-left: 10px;
+    padding-top: 19px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+.home_icon h4{
+    font-size: 28px;
+    padding-top: 35px;
+    padding-left: 10px;
+    font-family: 'Herculanum';
+}
+/*.first-grid{
+    width: 40%;
+    background-color: blue;
+    margin-left: 7.5%;
+    text-align: center;
+}
+.first-grid h2{
+    background-color: gray;
+    margin: 12px 12px;
+}
+.second-grid{
+    width: 40%;
+    background-color: crimson;
+    margin-left: 5%;
+}*/
+.main-grid{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+}
+.first-grid{
+    width: 600px;
+    margin-left: 70px;
+    margin-right: 120px;
+}
+.first-grid h2{
+    background-color: rgb(105, 105, 105);
+    margin: 6px 0;
+    color: white;
+}
+.second-grid{
+    width: 600px;
+}
+.second-grid h2{
+    background-color: rgb(105, 105, 105);
+    margin: 6px 0;
+    color: white;
+}
+.main-box{
+    margin: 60px 400px;
+}
