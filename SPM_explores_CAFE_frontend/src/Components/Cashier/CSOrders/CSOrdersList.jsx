@@ -25,12 +25,12 @@ import CSLoadMore from './CSLoadMore';
 
 const useStyles = makeStyles((theme)=>({
     table:{
-        minWidth: 650
+        minWidth: 850
     },
     tableContainer: {
         borderRadius: 15,
         margin: '10px 10px',
-        maxWidth: 950
+        maxWidth: 1050
     },
     tableHeaderCell: {
         fontWeight: 'bold',
@@ -89,7 +89,7 @@ function CSOrdersList() {
     return (
     
         <>
-      <button variant="danger" size="lg"><Link to = "/create-order">New Entry</Link></button>
+      <button variant="danger" size="lg"><Link to = "/create-order">New Order</Link></button>
       <OrderFilters/>
       {
                 <TableContainer component={Paper} className={classes.tableContainer} >
@@ -101,10 +101,8 @@ function CSOrdersList() {
                       <TableCell className={classes.tableHeaderCell}>Customer Name</TableCell>
                       <TableCell className={classes.tableHeaderCell}>Total Price</TableCell>
                       <TableCell className={classes.tableHeaderCell} >Status</TableCell>
-                      <TableCell className={classes.tableHeaderCell}
-                                  style={{
-                                      maxWidth: 1200
-                                  }}>Actions</TableCell>
+                      <TableCell className={classes.tableHeaderCell}>Actions</TableCell>
+                      <TableCell className={classes.tableHeaderCell}></TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -140,8 +138,8 @@ function CSOrdersList() {
                             Delete</Button>
                             
                         }</TableCell>
-                        <TableCell><Link to={`/edit-order/${order._id}`}>{<Button variant="contained" color="secondary" startIcon={<EditIcon />}>
-                            Edit</Button>}</Link></TableCell>
+                        <TableCell><Link to={`/view-order/${order._id}`}>{<Button variant="contained" color="secondary" startIcon={<EditIcon />}>
+                            View Order</Button>}</Link></TableCell>
                       </TableRow>
                     ))}
                   </TableBody>

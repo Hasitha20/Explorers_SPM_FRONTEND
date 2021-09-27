@@ -11,6 +11,7 @@ import cshome from "../cshome";
 import CSCreateReport from "../cashier/Reports/SavedReports/CreateReport/CSCreateReport";
 import CSSubmitReportList from "../cashier/Reports/SubmittedReports/CSSubmitReportList";
 import CSOrdersList from "../cashier/CSOrders/CSOrdersList";
+import CSViewOrder from "../cashier/CSOrders/ViewSingleOrder/CSViewOrder";
 
 function Pages() {
     const state = useContext(GlobalState)
@@ -32,6 +33,7 @@ function Pages() {
                 <Route path="/edit-report/:id" exact component={isCashier ? CSCreateReport: NotFound}></Route>
 
                 <Route path="/orders-list/" exact component={isCashier ? CSOrdersList: NotFound}></Route>
+                <Route path="/view-order/:id" exact component={isCashier ? CSViewOrder: NotFound}></Route>
 
 
 
