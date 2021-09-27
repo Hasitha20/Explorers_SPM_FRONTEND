@@ -6,18 +6,21 @@ function KMmessagesAPI() {
 
     useEffect(() => {
         const getmessageskm = async () => {
-            const res = await axios.get('/api/messagekm')
+            const res = await axios.get('http://localhost:5000/api/messagekm')
             console.log(res)
+            setmessageskm(res.data.messageskm)
+
         }
 
         getmessageskm()
-    }, [])
+    }, [setmessageskm])
 
-    return (
-        <div>
+    return  {
+        setmessageskm: [messageskm, setmessageskm]
+    }
+         
             
-        </div>
-    )
+       
 }
 
 export default KMmessagesAPI

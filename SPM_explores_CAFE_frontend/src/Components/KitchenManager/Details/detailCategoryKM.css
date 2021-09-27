@@ -1,6 +1,6 @@
 .detail {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
     display: flex;
     /* justify-content: space-evenly; */
     flex-wrap: wrap;

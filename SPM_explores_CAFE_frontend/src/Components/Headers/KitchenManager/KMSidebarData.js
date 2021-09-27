@@ -69,11 +69,13 @@ export const SidebarData = [
         title: 'View Todays Menu',
         path: '/viewtodaymenu',
         icon: <BiIcons.BiFoodMenu />
-    },{
-        title: 'Messages',
-        path: '/messages',
-        icon: <AiIcons.AiOutlineMessage />
-    },{
+    },
+    // {
+    //     title: 'Messages',
+    //     path: 'add/messages',
+    //     icon: <AiIcons.AiOutlineMessage />
+    // },
+    {
         title: 'Categories',
         path: '/kmcategory',
         icon: <AiIcons.AiOutlineMessage />
