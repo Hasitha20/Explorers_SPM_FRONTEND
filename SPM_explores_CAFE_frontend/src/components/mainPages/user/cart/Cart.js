@@ -33,7 +33,8 @@ export default function Cart() {
                                     <span>{food.quantity}</span>
                                     <button> + </button>
                                 </div>
-
+                                
+                                {/* delete button */}
                                 <div className="delete">X</div>
                             
                             
