@@ -1,4 +1,4 @@
-.detail{
+.detail-user{
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -11,7 +11,7 @@
     
 }
 
-.detail img{
+.detail-user img{
     max-width: 500px;
     width: 50%;
     margin: 20px;
@@ -65,10 +65,22 @@
     
 }
 
-.foods{
+.foods-user{
     max-width: 800px;
     width: 100%;
     margin: 5px 20px;
-    margin-left: 20px;
+    margin-left: 5px;
 }
+
+.foods-user h2{
+    margin-left: 1px;
+}
+
+.related-foods{
+    margin-top: 50px;
+    position: relative;
+    -webkit-box-orient: vertical;
+}
+
+
 

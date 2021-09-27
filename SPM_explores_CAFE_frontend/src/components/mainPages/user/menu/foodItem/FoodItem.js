@@ -1,7 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
+import {GlobalState} from '../../../../../Globalstate'
 
 function FoodItem({food}) {
+    const state = useContext(GlobalState)
+    const addCart = state.userAPI.addCart
     
     return(
         
@@ -22,7 +25,7 @@ function FoodItem({food}) {
 
                 </div>
                 <div className="row_btns">
-                    <Link id="btns_buy" to="/login">
+                    <Link id="btns_buy" to="#!" onClick={() => addCart(food)}>
                         Buy
                     </Link>
                     <Link id="btns_view" to={`/detail/${food._id}`}>

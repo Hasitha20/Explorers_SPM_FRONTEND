@@ -5,9 +5,10 @@ import DashBoard from './mainPages/manager/dashboard/DashBoard'
 // import CreateCategory from './mainPages/manager/category/CreateCategory'
 import Menu from './mainPages/user/menu/Menu'
 import LoginU from './mainPages/user/auth/LoginU'
-import Register from './mainPages/user/auth/Register'
+import RegisterU from './mainPages/user/auth/RegisterU'
 import Cart from './mainPages/user/cart/Cart'
 import DetailProduct from './mainPages/user/detailProduct/DetailProduct'
+import UserMgt from './mainPages/user/userMgt/UserMgt'
 
 import { GlobalState } from '../Globalstate'
  
@@ -30,8 +31,9 @@ function Pages(){
             <Route path="/menu" exact component={Menu}/>
             <Route path="/detail/:id" exact component={DetailProduct}/>
             <Route path="/login" exact component={LoginU}/>
-            <Route path="/register" exact component={Register}/>
+            <Route path="/register" exact component={RegisterU}/>
             <Route path="/cart" exact component={Cart}/>
+            <Route path="/display" exact component={UserMgt} />
  
             <Route path='/category/category_list' exact component={CategoryList}/>
 

@@ -23,6 +23,8 @@ code {
 @import url("./Components/mainPages/user/menu/menu.css");
 
 @import url("./Components/mainPages/user/detailProduct/detailProduct.css");
+
+@import url("./Components/mainPages/user/cart/cart.css");
  
 /*--------------------- Category List - manager --------------------------*/
 /* @import url("./components/mainPages/manager/category/categoryView/categoryList.css"); */
@@ -51,10 +53,12 @@ code {
 
 
 /*--------------------- Detail Food --------------------------*/
-@import url("./Components/KitchenManager/Details/detailProducts.css");
+/* @import url("./Components/KitchenManager/Details/detailProducts.css"); */
 
 /*--------------------- Add Food --------------------------*/
 @import url("./Components/KitchenManager/Menu/addFoods.css");
+
+@import url("./Components/mainPages/user/auth/loginU.css");
  
  
  

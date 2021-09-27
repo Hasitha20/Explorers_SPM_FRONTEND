@@ -43,24 +43,13 @@ export const UserSideBarData = [
             },
         ]
     },
+
     {
         title: 'Cart',
-        icon: <IoIcons.IoIosPaper />,
-        iconClosed: <RiIcons.RiArrowDownSFill />,
-        iconOpened: <RiIcons.RiArrowUpSFill />,
-        subNav: [
-            {
-                title: 'User Reports',
-                path: '/reports/reports1',
-                icon: <IoIcons.IoIosPaper />,
-            },
-            {
-                title: 'Add Payments',
-                path: '/reports/reports2',
-                icon: <IoIcons.IoIosPaper />,
-            },
-        ]
+        path: '/cart',
+        icon: <AiIcons.AiOutlineMessage />
     },
+  
     {
         title: 'Contact Us',
         path: '/map',
@@ -72,8 +61,8 @@ export const UserSideBarData = [
         icon: <FaIcons.FaClipboardList />
     },
     {
-        title: 'Find Us',
-        path: '/login',
+        title: 'Display User',
+        path: '/display',
         icon: <BsIcons.BsPeopleCircle />
     }
 ]

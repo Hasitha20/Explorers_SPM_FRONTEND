@@ -3,24 +3,24 @@ import {useParams, Link} from 'react-router-dom'
 import {GlobalState} from '../../../../Globalstate'
 import FoodItem from '../../user/menu/foodItem/FoodItem'
 
-function DetailMenu(){
+function DetailProduct(){
     const params = useParams()
     const state = useContext(GlobalState)
     const [foods] = state.menuAPI.foods
     const [detailProduct, setDetailProduct] = useState([])
 
     useEffect(() =>{
-        if(params){
+        if(params.id){
             foods.forEach(food => {
                 if(food._id === params.id) setDetailProduct(food)
             })
         }
 
-    },[params, foods])
+    },[params.id, foods])
     if(detailProduct.length === 0) return null;
     return(
         <div>
-        <div className="detail">
+        <div className="detail-user">
             <img src={detailProduct.images.url} alt=""/>
             <div className="box-detail">
                 <div className="row">
@@ -34,15 +34,15 @@ function DetailMenu(){
                 <p>Sold: {detailProduct.sold}</p>
                 <p>Description: {detailProduct.description}</p>
 
-                <Link to="/login" className="cart">Buy Now</Link>
+                <Link to="/cart" className="cart">Buy Now</Link>
 
             </div>
         </div>
 
-        <div className="foods">
+        <div>
             
             <h2>Related Products</h2>
-            <div>
+            <div className="foods">
             {
                 //food map comment added
                 foods.map(food => {
@@ -58,4 +58,4 @@ function DetailMenu(){
     )
 }
 
-export default DetailMenu
+export default DetailProduct

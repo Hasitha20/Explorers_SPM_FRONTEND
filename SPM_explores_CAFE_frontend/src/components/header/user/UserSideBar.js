@@ -63,24 +63,28 @@ function SideBar() {
     const showSidebar = () => setSidebar(!sidebar)
 
     const state = useContext(GlobalState)
-    // const [isLogged, setIsLogged] = state.userAPI.isLogged
+    console.log(state)
 
-    // const logoutUser = async () =>{
-    //     await axios.get('/user/logout')
-    //     localStorage.clear()
-    //     setIsLogged(false)
-    // }
+    const [isLogged] = state.userAPI.isLogged
+    const [cart] = state.userAPI.cart
 
-    // const loggedRouter = () =>{
-    //     return(
-    //         <>
-    //          <NavIconC to="/home" onClick={logoutUser} style={{color: "white", textDecoration: "none",fontSize: "20px" }}>
-    //                 LOGOUT
+
+    const logoutUser = async () =>{
+        await axios.get('/user/logout')
+        localStorage.clear()
+        window.location.href = "/login";
+    }
+
+    const loggedRouter = () =>{
+        return(
+            <>
+             <NavIconC to="/login" onClick={logoutUser} style={{color: "white", textDecoration: "none",fontSize: "20px" }}>
+                    LOGOUT
                     
-    //             </NavIconC>
-    //         </>
-    //     )
-    // }
+                </NavIconC>
+            </>
+        )
+    }
 
     return (
         <div>
@@ -95,16 +99,22 @@ function SideBar() {
                 <NavIcon to="/home" style={{color: "white", textDecoration: "none" }}>
                     Explores CAFE
                 </NavIcon>
-                {/* {
+                {
                     isLogged ? loggedRouter() :  <NavIconC to="/login" onClick={logoutUser} style={{color: "white", textDecoration: "none",fontSize: "20px" }}>
                     LOGIN
                     
                 </NavIconC>
-                } */}
+                }
                 {/* <NavIconC to="/login" style={{color: "white", textDecoration: "none",fontSize: "20px" }}>
                     LOGIN
                     
                 </NavIconC> */}
+
+                {/* <NavIconC to="/display" style={{color: "white", textDecoration: "none",fontSize: "20px" }}>
+                    Display User
+                    
+                </NavIconC> */}
+
                 <div style={{paddingTop: "20px"}}> 
                     {UserSideBarData.map((item, index) => {
                         return <UserSubMenu item={item} key={index} />;
