@@ -2,8 +2,8 @@
 import React from 'react'
 import {BrowserRouter as Router} from 'react-router-dom'
 
-import UserSideBar from './components/header/user/UserSideBar'
-import Pages from './components/Pages';
+// import UserSideBar from './components/header/user/UserSideBar'
+// import Pages from './components/Pages';
 
 import './index.css'
 // import SideBar from './components/header/manager/SideBar';
