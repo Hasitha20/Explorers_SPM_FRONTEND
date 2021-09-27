@@ -12,8 +12,8 @@ const initialState = {
     ingredients: '',
     price: 0,
     status: '',
-    // category: '',
-    id: ''
+    category: '',
+     
      
 }
 function AddFoods() {
@@ -21,6 +21,9 @@ function AddFoods() {
     const [food, setFood] = useState(initialState)
     const [images, setImages] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [categories] = state.kmcategoriesAPI.categories
+
+    console.log(categories)
 
     const param = useParams()
 
@@ -164,18 +167,23 @@ function AddFoods() {
                             value={food.price} onChange={handleChangeInput} />
                     </div>
                                 
-                    {/* <div className="row">
+                    <div className="row">
                         <label htmlFor="categories">Categories :</label>
                             <select name="category" value={food.category} onChange={handleChangeInput}>
                                 <option value="">Please Select a Category</option>
                                     {
                                         categories.map( category => (
-                                            <option value={category._id} key={category._id}></option>
+                                            <option value={category._id} key={category._id}>
+                                                {category.categoryName}
+                                                
+                                            </option>
                                         ))
                                     }
+                                    
                             </select>
+                            
                                 
-                    </div> */}
+                    </div>
 
                     <button type="submit" style={{fontSize: "24px"}}>{onEdit ? "Update" : "ADD"}</button>
 

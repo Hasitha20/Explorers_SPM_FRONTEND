@@ -1,5 +1,7 @@
 import React, {createContext, useState} from 'react'
 import FoodsAPI from '../../api/FoodsAPI'
+import KMCategoriesAPI from '../../api/KMCategoriesAPI'
+import KMmessagesAPI from '../../api/KMmessagesAPI'
 
 
 export const GlobalState = createContext()
@@ -15,7 +17,10 @@ export const DataProvider = ({children}) => {
     
     const state = {
         token: [token, setToken],
-        foodsAPI: FoodsAPI()
+        foodsAPI: FoodsAPI(),
+        kmmessagesAPI: KMmessagesAPI(),
+        kmcategoriesAPI: KMCategoriesAPI()
+
     }
     
 

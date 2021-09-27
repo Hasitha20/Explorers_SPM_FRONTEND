@@ -57,8 +57,22 @@ code {
 /*@import url("./Components/KitchenManager/Details/detailProducts.css");*/
 
 
+/*--------------------- Detail Category --------------------------*/
+@import url("./Components/KitchenManager/Details/detailCategoryKM.css");
+
 /*--------------------- Add Food --------------------------*/
 @import url("./Components/KitchenManager/Menu/addFoods.css");
+ 
+
+/*--------------------- Add Messages --------------------------*/
+@import url("./Components/KitchenManager/Meesages/addMessagesKM.css");
+
+/*--------------------- view Category  List --------------------------*/
+@import url("./Components/KitchenManager/category/view/kmlistc.css");
+
+ 
+ 
+ 
  
  
  

@@ -1,7 +1,25 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 
-function FoodItem({food}) {
+function FoodItem({food, callback, setCallback}) {
+
+    const deleteFood = async () => {
+        
+        try {
+            console.log(food)
+            const destroyImg =  axios .post('http://localhost:5000/api/destroy', { public_id: food.images.public_id })
+            const deleteFood =  axios .delete(`http://localhost:5000/api/foods/${ food._id }` )
+
+            await destroyImg
+            await deleteFood
+
+            setCallback(!callback)
+            
+        } catch (err) {
+            alert(err.response.data.mes)
+        }
+    }
 
     return (
         <div className="food_card" >
@@ -13,7 +31,7 @@ function FoodItem({food}) {
                     <span>${food.price}</span>                   
                     <p>{food.description}</p>
                     <span>Ingredients: {food.ingredients} </span>
-                    <p>Category : {food.category} </p>
+                    <p>  : {food.category}  </p>
                     <span>Status : "{food.status}"</span>
                      
             </div>
@@ -26,6 +44,7 @@ function FoodItem({food}) {
                     <a id="btn_view" href={`/detail/${food._id}`}>View</a>
                     
                     <Link id="btn_delete"  to={`/edit/${food._id}`} >Edit</Link> 
+                    <Link id="btn_delete"  to= "#" onClick={deleteFood}> Delete</Link> 
 
             </div>
             
