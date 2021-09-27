@@ -1,5 +1,5 @@
  
-// import React from 'react'
+import React from 'react'
 
 import './index.css'
 // import SideBar from './components/header/manager/SideBar';
