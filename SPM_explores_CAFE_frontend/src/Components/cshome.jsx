@@ -4,7 +4,7 @@ import Header from './cashier/Headers/Header'
 function home() {
     return (
         <div>
-            <Header/>
+           Explores home
         </div>
     )
 }

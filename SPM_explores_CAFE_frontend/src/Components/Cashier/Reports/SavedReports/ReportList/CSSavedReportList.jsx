@@ -29,17 +29,17 @@ function CSSavedReportList() {
       console.log({id})
       
       try{
-          setLoading(true)
+          
           const deleteReport = axios.delete(`/api/savedreport/${id}`, {
               headers: {Authorization: token}
           })
 
-      
+          alert("Report deleted successfully")
           await deleteReport
           setCallback(!callback)
-          setLoading(false)
+          
       }catch(err){
-          alert(err.response.data.msg)
+          alert(err)
       }
      }
 
