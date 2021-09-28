@@ -2,7 +2,9 @@ import React, {createContext, useState, useEffect} from "react";
 import ReportsAPI from "./components/cashier/api/ReportsAPI";
 import axios from 'axios'
 import CSUserAPI from "./components/cashier/api/CSUserAPI";
-
+import CSSubmitReportsAPI from "./components/cashier/api/CSSubmitReportsAPI";
+import CSOrdersAPI from "./components/cashier/api/CSOrdersAPI";
+import CSPaymentsAPI from "./components/cashier/api/CSPaymentsAPI";
 export const GlobalState= createContext()
 
 
@@ -33,7 +35,10 @@ export const DataProvider = ({children}) =>{
     const state = {
         token: [token, setToken],
         reportsAPI: ReportsAPI(),
-        userAPI: CSUserAPI()
+        csSubmitReportsAPI: CSSubmitReportsAPI(),
+        csordersAPI: CSOrdersAPI(),
+        CSPaymentsAPI: CSPaymentsAPI(),
+        csuserAPI: CSUserAPI(token) 
     }
     return (
         <GlobalState.Provider value={state}>

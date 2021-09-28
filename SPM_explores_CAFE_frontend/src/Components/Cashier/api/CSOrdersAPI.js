@@ -1,28 +1,28 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 
-function ReportsAPI() {
-    const [reports, setReports] = useState([])
+function CSOrdersAPI() {
+    const [csorders, setCSOrders] = useState([])
     const [callback, setCallback] = useState(false)
+    const [search, setSearch] = useState('')
     const [sort, setSort] = useState('')
     const [page, setPage] = useState(1)
     const [result, setResult] = useState(0)
-    
 
     useEffect(()=>{
         const getSavedReports = async ()=>{
-            const res = await axios.get(`/api/savedreport?limit=${page*9}&${sort}`)
-            setReports(res.data.savedReports)
+            const res = await axios.get(`/api/csorder?limit=${page*9}&${sort}&customername[regex]=${search}`)
+            setCSOrders(res.data.csorders)
             setResult(res.data.result)
         }
         getSavedReports()
-    }, [callback, sort, page])
-
+    }, [callback, sort, page, search])
 
 
     return {
-        reports: [reports, setReports],
+        csorders: [csorders, setCSOrders],
         callback: [callback, setCallback],
+        search: [search, setSearch],
         sort: [sort, setSort],
         page:[page, setPage],
         result:[result, setResult]
@@ -30,4 +30,4 @@ function ReportsAPI() {
     }
 }
 
-export default ReportsAPI
+export default CSOrdersAPI

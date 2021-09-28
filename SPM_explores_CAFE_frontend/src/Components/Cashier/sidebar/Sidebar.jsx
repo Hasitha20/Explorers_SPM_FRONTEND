@@ -12,7 +12,7 @@ function Sidebar() {
                     <h3 className="sidebarTitle">Dashboard</h3>
                     <ul className="sidebarList">
                         <li className="sidebarListItem active">
-                            <Link to ="/" style={{textDecoration:"none", color:"white"}}>
+                            <Link to ="/cs-dashboard" style={{textDecoration:"none", color:"white"}}>
                             <Home className="sidebarIcon"/>
                                 Home
                             </Link>
@@ -21,8 +21,10 @@ function Sidebar() {
                     <h3 className="sidebarTitle">Orders</h3>
                     <ul className="sidebarList">
                         <li className="sidebarListItem">
+                        <Link to ="/orders-list" style={{textDecoration:"none", color:"white"}}>
                             <CardTravelOutlined className="sidebarIcon"/>
                                 OrdersList
+                        </Link>
                         </li>
                         <li className="sidebarListItem">
                             <CardTravelOutlined className="sidebarIcon"/>
@@ -72,8 +74,10 @@ function Sidebar() {
                             </Link>
                         </li>
                         <li className="sidebarListItem">
+                            <Link to ="/submitted-reports" style={{textDecoration:"none", color:"white"}}>
                             <DescriptionOutlined className="sidebarIcon"/>
                                 Submitted Reports
+                            </Link>
                         </li>
                     </ul>
                 </div>
