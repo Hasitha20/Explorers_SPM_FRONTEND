@@ -17,7 +17,7 @@ function DashBoard() {
                 <IoIcons5.IoHome />
                 <h4>Dashboard</h4>                
             </div>
-            <hr/>
+            <hr/> 
 
             <div style={{margin:'10px 10px 10px 10px' ,paddingTop:'30px', backgroundColor: '#e0e0e0', }}>
                 <Grid container spacing={2}>
