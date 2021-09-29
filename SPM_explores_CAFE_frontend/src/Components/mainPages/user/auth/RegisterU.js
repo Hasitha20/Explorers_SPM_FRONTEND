@@ -47,8 +47,8 @@ export default function RegisterU() {
                 placeholder="Password" value={user.password} onChange={onChangeInput}/>
 
                 
-                <input type="number" name="role" required autoComplete="on"
-                placeholder="Role" value={user.role} onChange={onChangeInput}/>
+                {/* <input type="number" name="role" required autoComplete="on"
+                placeholder="Role" value={user.role} onChange={onChangeInput}/> */}
 
                 <div className="row">
                         <button type="submit">REGISTER </button>

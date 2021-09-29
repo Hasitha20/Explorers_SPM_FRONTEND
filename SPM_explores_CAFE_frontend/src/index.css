@@ -25,6 +25,12 @@ code {
 @import url("./Components/mainPages/user/detailProduct/detailProduct.css");
 
 @import url("./Components/mainPages/user/cart/cart.css");
+
+@import url("./Components/mainPages/user/staff/staff.css");
+
+@import url("./Components/mainPages/user/home/imageSlider.css");
+
+@import url("./Components/mainPages/user/home/viewHome.css");
  
 /*--------------------- Category List - manager --------------------------*/
 /* @import url("./components/mainPages/manager/category/categoryView/categoryList.css"); */

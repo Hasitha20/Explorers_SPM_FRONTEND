@@ -1,12 +1,66 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import { GlobalState } from '../../../../Globalstate'
 import {Link} from 'react-router-dom'
 import { FaProductHunt } from 'react-icons/fa'
+import axios from 'axios'
 
 export default function Cart() {
     const state = useContext(GlobalState)
-    const [cart] = state.userAPI.cart
+    const [cart, setCart] = state.userAPI.cart
+    const [token] = state.token
     const [total, setTotal] = useState(0)
+
+
+    useEffect(() =>{
+        const getTotal = () =>{
+            const total = cart.reduce((prev, item) => {
+                return prev + (item.price * item.quantity)
+            },0)
+
+            setTotal(total)
+        }
+        getTotal()
+    },[cart])
+
+    const addToCart = async () =>{
+        await axios.patch('/user/addcart', {cart}, {
+            headers: {Authorization: token}
+        })
+    }
+
+    const increment = (id) =>{
+        cart.forEach(item => {
+            if(item._id === id){
+                item.quantity += 1
+            }
+        })
+        setCart([...cart])
+        addToCart()
+    }
+
+    const decrement = (id) =>{
+        cart.forEach(item => {
+            if(item._id === id){
+                item.quantity === 1 ? item.quantity = 1 : item.quantity -= 1
+            }
+        })
+        setCart([...cart])
+        addToCart()
+    }
+
+    const removeFood = id =>{
+        if(window.confirm("Do you need to remove this from order list?")){
+            cart.forEach((item, index) =>{
+                if(item._id === id){
+                    cart.splice(index, 1)
+                }
+            })
+            setCart([...cart])
+            addToCart()
+        }
+    }
+
+
 
     if(cart.length === 0)
         return <h2 style={{textAlign:"center", fontSize:"5rem"}}>Empty Cart</h2>
@@ -14,7 +68,7 @@ export default function Cart() {
         <div>
             {
                 cart.map(food => (
-                    <div className="detail cart">
+                    <div className="detail cart" key={food._id}>
                         <img src={food.images.url} alt="" />
                         <div className="box-cart">
                     
@@ -29,13 +83,13 @@ export default function Cart() {
                                 <p>Description: {food.description}</p>
 
                                 <div className="amount">
-                                    <button> - </button>
+                                    <button onClick={() => decrement(food._id)}> - </button>
                                     <span>{food.quantity}</span>
-                                    <button> + </button>
+                                    <button onClick={() => increment(food._id)}> + </button>
                                 </div>
                                 
                                 {/* delete button */}
-                                <div className="delete">X</div>
+                                <div className="delete" onClick={() => removeFood(food._id)}>X</div>
                             
                             
 
@@ -44,8 +98,8 @@ export default function Cart() {
                 ))
             }
             <div className="total">
-                <h3>Total: Rs. {total}</h3>
-                <Link to="#!">Payment</Link>
+                <h3>Total Bill : Rs. {total}.00</h3>
+                <Link to="#!" className="placeLink">Place Order</Link>
             </div>
         </div>
     )

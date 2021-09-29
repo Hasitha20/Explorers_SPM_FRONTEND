@@ -9,7 +9,7 @@ import * as BsIcons from 'react-icons/bs'
 export const UserSideBarData = [
     {
         title: 'Home',
-        path: '/home',
+        path: '/viewHome',
         icon: <RiIcons.RiDashboardLine />
     },
 
@@ -20,29 +20,29 @@ export const UserSideBarData = [
     },
 
 
-    {
-        title: 'Category',
-        icon: <IoIcons5.IoFastFood />,
-        iconClosed: <RiIcons.RiArrowDownSFill />,
-        iconOpened: <RiIcons.RiArrowUpSFill />,
-        subNav: [
-            {
-                title: 'Today Menu',
-                path: '/menu',
-                icon: <IoIcons5.IoFastFood />,
-            },
-            {
-                title: 'Add Menu',
-                path: '/employee/manage_emp',
-                icon: <IoIcons5.IoFastFood />,
-            },
-            {
-                title: 'Category',
-                path: '/employee/add_employee',
-                icon: <IoIcons5.IoFastFood />,
-            },
-        ]
-    },
+    // {
+    //     title: 'Category',
+    //     icon: <IoIcons5.IoFastFood />,
+    //     iconClosed: <RiIcons.RiArrowDownSFill />,
+    //     iconOpened: <RiIcons.RiArrowUpSFill />,
+    //     subNav: [
+    //         {
+    //             title: 'Today Menu',
+    //             path: '/menu',
+    //             icon: <IoIcons5.IoFastFood />,
+    //         },
+    //         {
+    //             title: 'Add Menu',
+    //             path: '/employee/manage_emp',
+    //             icon: <IoIcons5.IoFastFood />,
+    //         },
+    //         {
+    //             title: 'Category',
+    //             path: '/employee/add_employee',
+    //             icon: <IoIcons5.IoFastFood />,
+    //         },
+    //     ]
+    // },
 
     {
         title: 'Cart',

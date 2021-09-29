@@ -19,8 +19,28 @@ export default function LoginU() {
             await axios.post('/user/login', {...user})
 
             localStorage.setItem('firstLogin', true)
+            
+            /////////////Testing////////////////
+            if(user.email == 'staff@explores.com' && user.password == 'staff123*'){
+                return (window.location.href = "/staff");
+            }
+            // else if(user.email == 'kitchenmgr@gmail.com' && user.password == 'kitchenmgr123*'){
+            //     window.location.href = "/";
+            // }else if(user.email == 'cashier@gmail.com' && user.password == 'employee123*'){
+            //     window.location.href = "/";
+            // }
+            else{
+                window.location.href = "/menu";
+            }
 
-            window.location.href = "/menu";
+
+            ///////////////////Test end////////////////////
+
+
+
+
+
+            // window.location.href = "/menu";
         }catch (err){
             alert(err.response.data.msg)
         }

@@ -10,15 +10,16 @@ function MenuAPI(){
     const [result, setResult] = useState(0)
 
     const getFoods = async () =>{
-        // const res = await axios.get(`/api/foods?limit=${page*9}&${category}&${sort}&title[regex]=${search}`)
-        const res = await axios.get('/api/foods')
+        const res = await axios.get(`/api/foods?limit=${page*9}&${sort}&name[regex]=${search}`)
+        // const res = await axios.get('/api/foods')
         setFoods(res.data.foods)
         console.log(res)
+        setResult(res.data.result)
     }
 
     useEffect(() =>{
         getFoods()
-    },[])
+    },[sort, search, page])
     return{
         foods: [foods, setFoods],
         category: [category, setCategory],

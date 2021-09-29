@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Switch, Route} from 'react-router-dom'
 import DashBoard from './mainPages/manager/dashboard/DashBoard'
  
@@ -9,8 +9,8 @@ import RegisterU from './mainPages/user/auth/RegisterU'
 import Cart from './mainPages/user/cart/Cart'
 import DetailProduct from './mainPages/user/detailProduct/DetailProduct'
 import UserMgt from './mainPages/user/userMgt/UserMgt'
+import ViewHome from './mainPages/user/home/ViewHome'
 
-import { GlobalState } from '../Globalstate'
  
 // import CreateCategory from './mainPages/manager/category/createCategory/CreateCategory'
 //import { GlobalState } from '../Globalstate'
@@ -18,9 +18,12 @@ import CategoryList from './mainPages/manager/category/categoryView/CategoryList
 // import Login from './login/LoginEmployee'
 import AddNewEmployee from './mainPages/manager/employee/addNewEmployee/AddNewEmployee'
 import EmployeeList from './mainPages/manager/employee/manageEmployee/EmployeeList'
+// import {GlobalState} from '../Globalstate'
+import Staff from './mainPages/user/staff/Staff'
  
 function Pages(){
     // const state = useContext(GlobalState)
+    // const [isLogged] = state.userAPI.isLogged
     
     return (
         <Switch>
@@ -34,6 +37,8 @@ function Pages(){
             <Route path="/register" exact component={RegisterU}/>
             <Route path="/cart" exact component={Cart}/>
             <Route path="/display" exact component={UserMgt} />
+            <Route path="/staff" exact component={Staff} />
+            <Route path="/viewHome" exact component={ViewHome} />
  
             <Route path='/category/category_list' exact component={CategoryList}/>
 

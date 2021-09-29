@@ -53,8 +53,35 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 500px;
+    border: 2px solid rgb(4, 155, 245);
+    border-radius: 5px;
+    padding:30px;
+    margin:50px auto;
+    margin-top: 10px;
+    box-shadow: 5px 10px rgb(4, 155, 245);
 }
 
 .total h3{
-    color: red
+    color: red;
+    border-radius: 25px;
+    border-color:red;
+    
+}
+
+.placeLink{
+    border: 2px solid rgb(#ee142b, #29050e);
+    border-radius: 4px;
+    
+    padding:10px;
+    margin:50px auto;
+    margin-top: 50px;
+    height: -70px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color:white;
+    margin-left: 90px;
+    background-image: linear-gradient(#ee142b, #29050e);
+    
 }
