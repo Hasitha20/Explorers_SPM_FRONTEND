@@ -5,16 +5,16 @@ import {GlobalState} from '../../../../GlobalState'
 function WidgetLg() {
     const [products,setProducts] = useState([]);
 
-  /*   useEffect(() => {
-        axios.get("http://localhost:5000/product/getAll").then((res) => {
-            console.log(res.data);
-            setProducts(res.data);
+  useEffect(() => {
+        axios.get("http://localhost:5000/api/foods").then((res) => {
+            console.log(res.data.foods);
+            setProducts(res.data.foods);
           })
           .catch((err) => {
-            alert(err.response.data.msg);
+            alert(err);
           });
 
-      }, []); */
+      }, []); 
     
     return (
         <div className="widgetLg">

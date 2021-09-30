@@ -8,15 +8,16 @@ function CSPaymentsAPI() {
     
     useEffect(()=>{
         const getSavedReports = async ()=>{
-            const res = await axios.get(`/api/cspayments`)
-            console.log(res.data)
-            //setCSPayments(res)
+            const res = await axios.get('/api/cspayments')
+            console.log(res.data.cspayments)
+            setCSPayments(res.data.cspayments)
          
         }
      getSavedReports()
-    })
+    }, [callback])
     return {
-        cspayments: [cspayments, setCSPayments]
+        cspayments: [cspayments, setCSPayments],
+        callback: [callback, setCallback]
     }
 }
 

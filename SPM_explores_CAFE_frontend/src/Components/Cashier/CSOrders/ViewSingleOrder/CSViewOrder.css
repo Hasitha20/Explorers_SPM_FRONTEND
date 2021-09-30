@@ -21,7 +21,7 @@
   color: rgb(230, 235, 240);
 }
 .bottomTotal{
-    margin-left: 520px;
+    margin-left: 770px;
     margin-top: 30px;
 }
 .bottomrow{
@@ -36,8 +36,15 @@
     color: white;
     border-radius: 20px;
 }
-
-
+.printbutton{
+    margin-left: 60px;
+    margin-top: 30px;
+    width: 250px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+}
 
 
 

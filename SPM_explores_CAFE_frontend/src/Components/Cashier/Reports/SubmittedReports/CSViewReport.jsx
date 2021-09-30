@@ -4,7 +4,7 @@ import { Grid } from "@material-ui/core";
 import "react-datepicker/dist/react-datepicker.css";
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
-import './CSCreateReport.css';
+import '../SavedReports/CreateReport/CSCreateReport.css'
 import { Link} from "react-router-dom";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import {
@@ -12,7 +12,7 @@ import {
   KeyboardTimePicker,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
-import {GlobalState} from '../../../../../GlobalState'
+import {GlobalState} from '../../../../GlobalState'
 import {useHistory, useParams} from 'react-router'
 
 const styles ={
@@ -36,97 +36,39 @@ const initialState= {
     total_suppliers_charges:0
   }
 
-function CSCreateReport() {
+function CSViewReport() {
 
   const state = useContext(GlobalState)
-  const [savedreport, setSavedReport] = useState(initialState)
+  const [SubmitReport, setSubmitReports] = useState(initialState)
   const [csorders] = state.csordersAPI.csorders
 
-  
-  const history = useHistory()
-  const param = useParams()
+ 
 
-  const [reports] = state.reportsAPI.reports
+  const [reports] = state.csSubmitReportsAPI.sreports
   const [onEdit, setOnEdit] = useState(false)
   const [callback, setCallback] = state.reportsAPI.callback
   const [scallback, setsCallback] = state.csSubmitReportsAPI.callback;
 
-  const [date, setDate] = useState(new Date());
-  const [start_time, setstart_time] = useState(new Date());
-  const [end_time, setend_time] = useState(new Date());
-  
+  const params = useParams()
 
-  useEffect(() =>{
-    if(param.id){
-        setOnEdit(true)
-        reports.forEach(report =>{
-            if(report._id === param.id){
-                setSavedReport(report)
-            } 
+  useEffect(()=>{
+    if(params.id){
+        reports.forEach(item =>{
+            if(item._id === params.id) setSubmitReports(item)
+            
         })
-    }else{
-        setOnEdit(false)
-        setSavedReport(initialState)
-    }
-}, [param.id, reports])
-
-   const handleChangeInput = (e) =>{
-
-    const {name, value} = e.target
-    setSavedReport({...savedreport, [name]: value})
-
-  }
- 
-  function clearAllFields() {
-    this.setReports(initialState)
-  }
-
-  const handleDateChange = (date) => {
-    setDate(date);
-  };
-  const handleStarttime = (start_time)=>{
-    setstart_time(start_time);
-  }
-  const handleEndtime = (end_time)=>{
-    setend_time(end_time);
-  }
-  const handleSubmit = async e =>{
-        e.preventDefault()
-        try{
         
-            if(onEdit){
-                await axios.put(`/api/savedreport/${savedreport._id}`, {...savedreport, date , start_time, end_time});
-                 alert("Report updated successfully")
-                
-            }else{
-                await axios.post('/api/savedreport', {...savedreport, date, start_time, end_time});
-               alert("Report added successfully")
-            }
-            setCallback(!callback);
-            
-            history.push('/saved-reports')
-            
+    }
+   
+    
+}, [params.id, csorders])
 
-        }catch(err){
-            alert(err.response.data.msg) 
-        }  
-    }
-    const submitReport = async e=>{
-        e.preventDefault()
-        try{
-            await axios.post(`/api/submitreport`, {...savedreport, date , start_time, end_time})
-        }catch(err){
-            alert(err.response.data.msg) 
-        }
-        setsCallback(!scallback)
-        history.push('/submitted-reports')
-    }
     return (
         <div className="createReport">
         <div style={styles.outer} >
          
-          <form onSubmit={handleSubmit}>
-          <button><Link to ="/saved-reports"><ArrowBackIosIcon></ArrowBackIosIcon></Link></button>
+          <form >
+          <button><Link to ="/submitted-reports"><ArrowBackIosIcon></ArrowBackIosIcon></Link></button>
           <h1>Add New Entry</h1>
               <div className="inputFields">
                 
@@ -141,9 +83,9 @@ function CSCreateReport() {
                               id="date-picker-inline"
                               label=""
                               name="date"
-                              value= {savedreport.date}
-                              minDate={new Date()} 
-                              onChange={handleDateChange} 
+                              value= {SubmitReport.date}
+                             
+                              
                               KeyboardButtonProps={{
                                   'aria-label': 'change date',
                               }}
@@ -155,8 +97,8 @@ function CSCreateReport() {
                               id="time-picker"
                               label=""
                               name="start_time"
-                              value={savedreport.start_time}
-                              onChange={handleStarttime}
+                              value={SubmitReport.start_time}
+                             
                               KeyboardButtonProps={{
                                   'aria-label': 'change time',
                               }}
@@ -168,8 +110,8 @@ function CSCreateReport() {
                               id="time-picker"
                               label=""
                               name="end_time"
-                              value={savedreport.end_time}
-                              onChange={handleEndtime}
+                              value={SubmitReport.end_time}
+                              
                               KeyboardButtonProps={{
                                   'aria-label': 'change time',
                               }}
@@ -181,55 +123,46 @@ function CSCreateReport() {
                       <div class="grid-item">
                           <label>Total Orders Per day</label>
                           <input type="Number" placeholder="Total Orders" className= "form-control"
-                          value={savedreport.orders_count}  onChange={handleChangeInput}
+                          value={SubmitReport.orders_count}  
                           name="orders_count"
                           />
                       </div>
                       <div class="grid-item">
                           <label>Completed Orders</label>
                           <input type="Number" placeholder="Completed Orders" className= "form-control" defaultValue={csorders.length}
-                          value={savedreport.complete_orders_count}  onChange={handleChangeInput}
+                          value={SubmitReport.complete_orders_count}  
                           name="complete_orders_count"
                           />
                       </div>
                       <div class="grid-item">
                           <label>Canceled Orders</label>
                           <input type="Number" placeholder="Canceled Orders" className= "form-control"
-                          value={savedreport.canceled_orders_count}  onChange={handleChangeInput}
+                          value={SubmitReport.canceled_orders_count}  
                           name="canceled_orders_count"
                           />
                       </div>
                       <div class="grid-item">
                           <label>Revenue      </label><br></br>
                           <input type="Number" placeholder="Revenue" className= "form-control"
-                          value={savedreport.revenue}  onChange={handleChangeInput}
+                          value={SubmitReport.revenue}  
                           name="revenue"
                           />
                       </div>
                       <div class="grid-item">
                           <label>Other Payments</label>
                           <input type="Number" placeholder="Other Payments" className= "form-control"
-                          value={savedreport.other_payments}  onChange={handleChangeInput}
+                          value={SubmitReport.other_payments}  
                           name="other_payments"
                           />
                       </div>
                       <div class="grid-item">
                           <label>Total Suppliers Charges</label>
                           <input type="Number" placeholder="Total Suppliers Charges" className= "form-control"
-                          value={savedreport.total_suppliers_charges}  onChange={handleChangeInput}
+                          value={SubmitReport.total_suppliers_charges}  
                           name="total_suppliers_charges"
                           />
                       </div>
                   
-                      <div class="grid-item">
-                              <button onClick={clearAllFields} >Clear</button>
-                      </div>
-                      <div class="grid-item">
-                            <button type="submit">{onEdit? "Update" : "Create"}</button>
-                      </div>
-                     <div class="grid-item">
-                              <button onClick={submitReport} >Submit</button>
-                      </div>
                       
                   </div>         
               </div>
@@ -240,4 +173,4 @@ function CSCreateReport() {
     )
 }
 
-export default CSCreateReport
+export default CSViewReport

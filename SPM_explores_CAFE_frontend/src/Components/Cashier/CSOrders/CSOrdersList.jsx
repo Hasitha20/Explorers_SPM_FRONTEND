@@ -13,6 +13,7 @@ import {Table,
         Typography
         } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
+import ShopIcon from '@mui/icons-material/Shop';
 import EditIcon from '@material-ui/icons/Edit';
 import Loading from '../../Pages/Utils/Loading/Loading';
 import { Link } from 'react-router-dom';
@@ -28,9 +29,11 @@ const useStyles = makeStyles((theme)=>({
         minWidth: 850
     },
     tableContainer: {
+        marginTop: 30,
         borderRadius: 15,
         margin: '10px 10px',
-        maxWidth: 1050
+        maxWidth: 1050,
+        marginLeft:50
     },
     tableHeaderCell: {
         fontWeight: 'bold',
@@ -64,7 +67,8 @@ function CSOrdersList() {
     const [callback, setCallback] = state.csordersAPI.callback
     const [token] = state.token
     const classes = useStyles();
-    
+    const [onEdit, setOnEdit] = useState(false)
+    const [status, setStatus] = useState([])
     console.log(state)
 
     const deleteorder = async(id) =>{
@@ -85,11 +89,23 @@ function CSOrdersList() {
       }
     }
 
+    const handleChangeInput = (status) =>{
 
+     
+      setStatus(status);
+  
+    }
+   const updateOrder = async(id) =>{
+   
+      setOnEdit(true)
+      await axios.put(`/api/csorder/${csorders._id}`, {status});
+      alert("Order updated successfully")
+       
+   }
     return (
     
         <>
-      <button variant="danger" size="lg"><Link to = "/create-order">New Order</Link></button>
+     <h1 className="titleOrders">Orders      <ShopIcon /></h1>
       <OrderFilters/>
       {
                 <TableContainer component={Paper} className={classes.tableContainer} >
@@ -122,7 +138,7 @@ function CSOrdersList() {
                         </TableCell>
                         <TableCell >${(order.totalPrice)}</TableCell>
                         <TableCell >
-                            <Typography 
+                            <Typography contenteditable="true"  
                             className={classes.status}
                             style={{
                                 backgroundColor:
@@ -134,11 +150,11 @@ function CSOrdersList() {
                             >{(order.status)}</Typography>
                         </TableCell>
                         <TableCell >{
-                            <Button variant="contained" color="secondary" startIcon={<DeleteIcon />} onClick={()=> deleteorder(order._id)}>
+                            <Button className="deleteorderbtn" startIcon={<DeleteIcon />} onClick={()=> deleteorder(order._id)}>
                             Delete</Button>
                             
                         }</TableCell>
-                        <TableCell><Link to={`/view-order/${order._id}`}>{<Button variant="contained" color="secondary" startIcon={<EditIcon />}>
+                        <TableCell><Link to={`/view-order/${order._id}`}>{<Button className="viewOrderbtn">
                             View Order</Button>}</Link></TableCell>
                       </TableRow>
                     ))}

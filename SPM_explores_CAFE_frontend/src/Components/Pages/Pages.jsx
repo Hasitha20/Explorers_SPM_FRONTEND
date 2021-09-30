@@ -12,28 +12,33 @@ import CSCreateReport from "../cashier/Reports/SavedReports/CreateReport/CSCreat
 import CSSubmitReportList from "../cashier/Reports/SubmittedReports/CSSubmitReportList";
 import CSOrdersList from "../cashier/CSOrders/CSOrdersList";
 import CSViewOrder from "../cashier/CSOrders/ViewSingleOrder/CSViewOrder";
+import CSPaymentsList from "../cashier/CSPayments/CSPaymentsList";
+import CSCustomersList from "../cashier/Customers/CSCustomersList";
+import CSViewReport from "../cashier/Reports/SubmittedReports/CSViewReport";
 
 function Pages() {
-    const state = useContext(GlobalState)
-    const [isLogged] = state.csuserAPI.isLogged
-    const [isCashier] = state.csuserAPI.isCashier
+    
+    
     return (
         <div className="pages">
             <Switch>
                 
                 
                 <Route path="/" exact component={cshome}></Route>
-                <Route path="/cslogin" exact component={isLogged ? NotFound : CSLogin}></Route>
-                <Route path="/csregister" exact component={isLogged ? NotFound : CSRegister}></Route>
+                <Route path="/cslogin" exact component={CSLogin}></Route>
+                <Route path="/csregister" exact component={CSRegister}></Route>
 
-                <Route path="/cs-dashboard" exact component={isCashier ? CSHome : NotFound}></Route>
-                <Route path="/saved-reports" exact component={isCashier ? CSSavedReportList: NotFound}></Route>
-                <Route path="/submitted-reports" exact component={isCashier ? CSSubmitReportList: NotFound}></Route>
-                <Route path="/create-report" exact component={isCashier ? CSCreateReport: NotFound}></Route>
-                <Route path="/edit-report/:id" exact component={isCashier ? CSCreateReport: NotFound}></Route>
+                <Route path="/cs-dashboard" exact component={  CSHome }></Route>
+                <Route path="/saved-reports" exact component={ CSSavedReportList}></Route>
+                <Route path="/submitted-reports" exact component={CSSubmitReportList}></Route>
+                <Route path="/create-report" exact component={ CSCreateReport}></Route>
+                <Route path="/edit-report/:id" exact component={  CSCreateReport}></Route>
+                <Route path="/view-report/:id" exact component={  CSViewReport}></Route>
 
-                <Route path="/orders-list/" exact component={isCashier ? CSOrdersList: NotFound}></Route>
-                <Route path="/view-order/:id" exact component={isCashier ? CSViewOrder: NotFound}></Route>
+                <Route path="/orders-list/" exact component={  CSOrdersList}></Route>
+                <Route path="/view-order/:id" exact component={  CSViewOrder}></Route>
+                <Route path="/payments-list" exact component={  CSPaymentsList}></Route>
+                <Route path="/customers-list" exact component={  CSCustomersList}></Route>
 
 
 

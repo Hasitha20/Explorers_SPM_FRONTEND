@@ -1,7 +1,9 @@
 .createReport{
+    width: 1000px;
     padding-top: 55px;
-    background-color: rgba(245, 248, 245, 0.966);
+    background-color: white;
     padding-bottom: 30px;
+    margin-left: 50px;
 }
 .createReport h1{
     text-align: center;

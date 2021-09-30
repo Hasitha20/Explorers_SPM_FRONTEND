@@ -1,11 +1,11 @@
 import React from 'react'
 import {BrowserRouter as Router} from 'react-router-dom';
 import {DataProvider} from './GlobalState'
-import Header from './components/cashier/Headers/Header.jsx';
-import Sidebar from './components/cashier/sidebar/Sidebar';
+import Header from './Components/cashier/Headers/Header'
+import Sidebar from './Components/cashier/sidebar/Sidebar';
 
 import './App.css'
-import Pages from './components/Pages/Pages';
+import Pages from './Components/Pages/Pages';
 function App() {
   return (
     <DataProvider>

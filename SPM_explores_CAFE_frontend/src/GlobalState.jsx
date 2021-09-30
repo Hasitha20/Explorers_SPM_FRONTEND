@@ -1,10 +1,10 @@
 import React, {createContext, useState, useEffect} from "react";
-import ReportsAPI from "./components/cashier/api/ReportsAPI";
+import ReportsAPI from "./Components/cashier/api/ReportsAPI";
 import axios from 'axios'
-import CSUserAPI from "./components/cashier/api/CSUserAPI";
-import CSSubmitReportsAPI from "./components/cashier/api/CSSubmitReportsAPI";
-import CSOrdersAPI from "./components/cashier/api/CSOrdersAPI";
-import CSPaymentsAPI from "./components/cashier/api/CSPaymentsAPI";
+import CSUserAPI from "./Components/cashier/api/CSUserAPI";
+import CSSubmitReportsAPI from "./Components/cashier/api/CSSubmitReportsAPI";
+import CSOrdersAPI from "./Components/cashier/api/CSOrdersAPI";
+import CSPaymentsAPI from "./Components/cashier/api/CSPaymentsAPI";
 export const GlobalState= createContext()
 
 
@@ -37,7 +37,7 @@ export const DataProvider = ({children}) =>{
         reportsAPI: ReportsAPI(),
         csSubmitReportsAPI: CSSubmitReportsAPI(),
         csordersAPI: CSOrdersAPI(),
-        CSPaymentsAPI: CSPaymentsAPI(),
+        cspaymentsAPI: CSPaymentsAPI(),
         csuserAPI: CSUserAPI(token) 
     }
     return (

@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, {useContext, useState, useEffect, useRef} from 'react'
 import {GlobalState} from '../../../../GlobalState'
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import {useParams} from 'react-router-dom'
@@ -12,18 +12,15 @@ import {Table,
     Paper,
     makeStyles,
     Typography,
-    Select,
-    MenuItem
+    
     } from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
 
-import { Link } from 'react-router-dom';
+
+
 import axios from 'axios'
 
-import Button from 'react-bootstrap/Button';
 import uniqid from 'uniqid';
-
+import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
 
 
 
@@ -66,12 +63,11 @@ const useStyles = makeStyles((theme)=>({
 }))
 
 function CSViewOrder() {
+    const pdfExportComponent = useRef(null);
     const state = useContext(GlobalState)
     const [orderDetails, setOrderDetails] = useState([])
     const [csorders] = state.csordersAPI.csorders
-    const [setLoading] = useState(false)
-    const [callback, setCallback] = state.csordersAPI.callback
-    const [token] = state.token
+    
     const classes = useStyles();
     const [total, setTotal] = useState(0)
     const [payment, setPayment]= useState()
@@ -129,8 +125,15 @@ function CSViewOrder() {
             alert(err.response.data.msg) 
         }
     }
+    const handleExportWithComponent = (event) =>{
+        pdfExportComponent.current.save();
+    }
     return (
         <div className="viewOrder">
+           
+           <PDFExport ref={pdfExportComponent} scale={0.4}
+        paperSize="A4"
+        margin="2cm">
             <h1 className="titleReceipt">Order Receipt  <ReceiptIcon/></h1>
              <div className="cusDetails">
                 <div className="row">
@@ -188,9 +191,13 @@ function CSViewOrder() {
                   </TableBody>
                 </Table>
               </TableContainer>
+              <h3 className="bottomTotal">Total Amount: ${total}</h3> 
+              </PDFExport> 
+              
             <div className="bottomrow">
                 <button className="addPaymentBtn" onClick={addPayment}>Add Payment</button>
-                <h3 className="bottomTotal">Total Amount: ${total}</h3>  
+                <button className="printbutton" onClick={handleExportWithComponent}>Print</button>
+               
             </div>
      </div>
     )

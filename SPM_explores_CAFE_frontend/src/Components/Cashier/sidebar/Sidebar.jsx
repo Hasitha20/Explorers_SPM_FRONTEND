@@ -27,45 +27,37 @@ function Sidebar() {
                         </Link>
                         </li>
                         <li className="sidebarListItem">
-                            <CardTravelOutlined className="sidebarIcon"/>
-                                Summary
-                        </li>
-                        <li className="sidebarListItem">
+                        <Link to ="/payments-list" style={{textDecoration:"none", color:"white"}}>
                             <CardTravelOutlined className="sidebarIcon"/>
                                 Payments
+                     </Link>
                         </li>
+                       
                     </ul>
                     <h3 className="sidebarTitle">Menu</h3>
                     <ul className="sidebarList">
                         <li className="sidebarListItem">
                             <ListAltOutlined className="sidebarIcon"/>
-                                Breakfast Menu
+                                 Menu
                         </li>
-                        <li className="sidebarListItem">
-                            <ListAltOutlined className="sidebarIcon"/>
-                                Lunch Menu
-                        </li>
-                        <li className="sidebarListItem">
-                            <ListAltOutlined className="sidebarIcon"/>
-                                Dinner Menu
-                        </li>
+                        
                     </ul>
                     <h3 className="sidebarTitle">Customers</h3>
                     <ul className="sidebarList">
                         <li className="sidebarListItem">
+                        <Link to ="/customers-list" style={{textDecoration:"none", color:"white"}}>
                             <PeopleAltOutlined className="sidebarIcon"/>
                                 Customers List
-                        </li>
-                        <li className="sidebarListItem">
-                            <PeopleAltOutlined className="sidebarIcon"/>
-                                Contact Details
+                        </Link>
                         </li>
                     </ul>
                     <h3 className="sidebarTitle">Reports</h3>
                     <ul className="sidebarList">
                         <li className="sidebarListItem">
+                        <Link to ="/create-report" style={{textDecoration:"none", color:"white"}}>
                             <NoteAddOutlined className="sidebarIcon"/>
                                 New Report
+                        </Link>
                         </li>
                         <li className="sidebarListItem">
                             <Link to ="/saved-reports" style={{textDecoration:"none", color:"white"}}>

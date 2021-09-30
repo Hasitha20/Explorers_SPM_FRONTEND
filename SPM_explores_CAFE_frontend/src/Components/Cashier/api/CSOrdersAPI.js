@@ -10,12 +10,12 @@ function CSOrdersAPI() {
     const [result, setResult] = useState(0)
 
     useEffect(()=>{
-        const getSavedReports = async ()=>{
+        const getSavedOrders = async ()=>{
             const res = await axios.get(`/api/csorder?limit=${page*9}&${sort}&customername[regex]=${search}`)
             setCSOrders(res.data.csorders)
             setResult(res.data.result)
         }
-        getSavedReports()
+        getSavedOrders()
     }, [callback, sort, page, search])
 
 

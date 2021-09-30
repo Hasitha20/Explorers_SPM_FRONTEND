@@ -17,8 +17,8 @@ import {Link} from 'react-router-dom'
 
 function Header() {
     const state = useContext(GlobalState)
-    console.log(state)
-    /* const [isLogged] = state.csuserAPI.isLogged; */
+  
+    const [isLogged] = state.csuserAPI.isLogged; 
     const [isCashier] = state.csuserAPI.isCashier;
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);

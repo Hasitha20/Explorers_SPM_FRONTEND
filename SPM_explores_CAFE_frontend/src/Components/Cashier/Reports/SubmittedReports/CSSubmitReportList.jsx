@@ -1,51 +1,97 @@
-import React, {useContext} from 'react'
 import {GlobalState} from '../../../../GlobalState'
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import { Button } from '@material-ui/core';
-import EditIcon from '@material-ui/icons/Edit';
+import React, {useContext, useState} from 'react'
+import {Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  makeStyles,
+  Avatar,
+  Grid,
+  Typography
+  } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 import Loading from '../../../Pages/Utils/Loading/Loading';
 import { Link } from 'react-router-dom';
-/* import axios from 'axios' */
+import axios from 'axios'
+import Button from 'react-bootstrap/Button';
+import '../SavedReports/ReportList/CSSavedReportList.css'
 import ReportFilters from '../SavedReports/ReportList/ReportFilters';
+
+
+const useStyles = makeStyles((theme)=>({
+  table:{
+      minWidth: 850
+  },
+  tableContainer: {
+      marginTop: 30,
+      borderRadius: 15,
+      margin: '10px 10px',
+      maxWidth: 1050,
+      marginLeft:50
+  },
+  tableHeaderCell: {
+      fontWeight: 'bold',
+      backgroundColor: theme.palette.primary.dark,
+      color: theme.palette.getContrastText(theme.palette.primary.dark)
+  },
+  avatar:{
+      backgroundColor: theme.palette.primary.light,
+      color: theme.palette.getContrastText(theme.palette.primary.light)
+  },
+  name: {
+      fontWeight: 'bold',
+      color: theme.palette.primary.dark
+  },
+  status: {
+      fontweight: 'bold',
+      fontSize: '0.75rem',
+      color: 'white',
+      backgroundColor: 'grey',
+      borderRadius: 8,
+      padding: '3px 10px',
+      display: 'inline-block'
+  }
+}))
+
 
 function CSSubmitReportList() {
     const state = useContext(GlobalState)
     const [reports] = state.csSubmitReportsAPI.sreports
-    /* const [loading, setLoading] = useState(false)
-    const [callback, setCallback] = state.csSubmitReportsAPI.callback
-    const [isCashier] = state.csuserAPI.isCashier
-    const [token] = state.token */
+    const classes = useStyles();
     
     console.log(state)
 
     return (
-      <>
-      <button><Link to = "/create-report">New Entry</Link></button>
-      <ReportFilters/>
+      <div className="reportlist">
+      <h1 className="saved-reports-title">Submitted Reports</h1>
+        <div className="reporttopheader">
+         
+           <button className="btnnewReport"><Link to = "/create-report" className="btnnewReportlink">New Entry</Link></button>
+            <ReportFilters/>
+           
+        </div>
       {
-                <TableContainer component={Paper} >
+                <TableContainer component={Paper} className={classes.tableContainer} >
                 <Table  aria-label="simple table">
                   <TableHead>
                     <TableRow>
-                      <TableCell align="right">Date</TableCell>
-                      <TableCell align="right">Start Time</TableCell>
-                      <TableCell align="right">End Time</TableCell>
-                      <TableCell align="right">Actions</TableCell>
+                      <TableCell className={classes.tableHeaderCell}>Date</TableCell>
+                      <TableCell className={classes.tableHeaderCell}>Start Time</TableCell>
+                      <TableCell className={classes.tableHeaderCell}>End Time</TableCell>
+                      <TableCell className={classes.tableHeaderCell}>Actions</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {reports.map((report) => (
                       <TableRow key={report._id}>
-                        <TableCell align="right">{new Date(report.date).toLocaleDateString()}</TableCell>
-                        <TableCell align="right">{new Date(report.start_time).toLocaleTimeString()}</TableCell>
-                        <TableCell align="right">{new Date(report.end_time).toLocaleTimeString()}</TableCell>
-                        <TableCell><Link to={`/edit-report/${report._id}`}>{<Button variant="contained" color="secondary" startIcon={<EditIcon />}>
+                        <TableCell >{new Date(report.date).toLocaleDateString()}</TableCell>
+                        <TableCell >{new Date(report.start_time).toLocaleTimeString()}</TableCell>
+                        <TableCell >{new Date(report.end_time).toLocaleTimeString()}</TableCell>
+                        <TableCell><Link to={`/view-report/${report._id}`} >{<Button  className="viewbtn">
                             View</Button>}</Link></TableCell>
                       </TableRow>
                     ))}
@@ -55,7 +101,7 @@ function CSSubmitReportList() {
             
       }
       {reports.length === 0 && <Loading/>}
-    </>
+    </div>
     )
 }
 

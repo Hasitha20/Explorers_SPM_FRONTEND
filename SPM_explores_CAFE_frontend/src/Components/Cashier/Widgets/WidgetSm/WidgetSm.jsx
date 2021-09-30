@@ -1,14 +1,17 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import axios from 'axios'
 import './WidgetSm.css';
 import { Visibility } from '@material-ui/icons';
+import {GlobalState} from '../../../../GlobalState'
 function WidgetSm() {
     const [users, setUsers] = useState([]);
+    
 
-  /*   useEffect(() => {
+
+    useEffect(() => {
      
 
-          axios.get("http://localhost:5000/usersnew/displayusers").then((res) => {
+          axios.get("/csuser/getCustomers").then((res) => {
             console.log(res.data);
             setUsers(res.data);
           })
@@ -16,7 +19,7 @@ function WidgetSm() {
             alert(err.response.data.msg);
           });
       }, []);
-     */
+    
     return (
         <div className="widgetSm">
             <span className="widgetSmTitle">Top Customers</span>

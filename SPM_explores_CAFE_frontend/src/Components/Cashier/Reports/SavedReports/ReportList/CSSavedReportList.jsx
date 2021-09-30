@@ -1,19 +1,60 @@
 import React, {useContext, useState} from 'react'
 import {GlobalState} from '../../../../../GlobalState'
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import {Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  makeStyles,
+  Avatar,
+  Grid,
+  Typography
+  } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
+import EditIcon from '@mui/icons-material/Edit';
 import Loading from '../../../../Pages/Utils/Loading/Loading';
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import ReportFilters from './ReportFilters';
 import Button from 'react-bootstrap/Button';
+import './CSSavedReportList.css'
+
+const useStyles = makeStyles((theme)=>({
+  table:{
+      minWidth: 850
+  },
+  tableContainer: {
+      marginTop: 30,
+      borderRadius: 15,
+      margin: '10px 10px',
+      maxWidth: 1050,
+      marginLeft:50
+  },
+  tableHeaderCell: {
+      fontWeight: 'bold',
+      backgroundColor: theme.palette.primary.dark,
+      color: theme.palette.getContrastText(theme.palette.primary.dark)
+  },
+  avatar:{
+      backgroundColor: theme.palette.primary.light,
+      color: theme.palette.getContrastText(theme.palette.primary.light)
+  },
+  name: {
+      fontWeight: 'bold',
+      color: theme.palette.primary.dark
+  },
+  status: {
+      fontweight: 'bold',
+      fontSize: '0.75rem',
+      color: 'white',
+      backgroundColor: 'grey',
+      borderRadius: 8,
+      padding: '3px 10px',
+      display: 'inline-block'
+  }
+}))
 
 
 function CSSavedReportList() {
@@ -22,7 +63,7 @@ function CSSavedReportList() {
     const [ setLoading] = useState(false)
     const [callback, setCallback] = state.reportsAPI.callback
     const [token] = state.token
-    
+    const classes = useStyles();
     console.log(state)
 
     const deletereport = async(id) =>{
@@ -45,33 +86,39 @@ function CSSavedReportList() {
 
 
     return (
-      <>
-      <button variant="danger" size="lg"><Link to = "/create-report">New Entry</Link></button>
-      <ReportFilters/>
-      {
-                <TableContainer component={Paper} >
+      <div className="reportlist">
+        <h1 className="saved-reports-title">Saved Reports</h1>
+        <div className="reporttopheader">
+         
+           <button className="btnnewReport"><Link to = "/create-report" className="btnnewReportlink">New Entry</Link></button>
+            <ReportFilters/>
+           
+        </div>
+      {        
+                <TableContainer component={Paper} className={classes.tableContainer}>
                 <Table  aria-label="simple table">
                   <TableHead>
                     <TableRow>
-                      <TableCell align="right">Date</TableCell>
-                      <TableCell align="right">Start Time</TableCell>
-                      <TableCell align="right">End Time</TableCell>
-                      <TableCell align="right">Actions</TableCell>
+                      <TableCell  className={classes.tableHeaderCell}>Date</TableCell>
+                      <TableCell  className={classes.tableHeaderCell}>Start Time</TableCell>
+                      <TableCell  className={classes.tableHeaderCell}>End Time</TableCell>
+                      <TableCell  className={classes.tableHeaderCell}>Actions</TableCell>
+                      <TableCell className={classes.tableHeaderCell}></TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {reports.map((report) => (
                       <TableRow key={report._id}>
-                        <TableCell align="right">{new Date(report.date).toLocaleDateString()}</TableCell>
-                        <TableCell align="right">{new Date(report.start_time).toLocaleTimeString()}</TableCell>
-                        <TableCell align="right">{new Date(report.end_time).toLocaleTimeString()}</TableCell>
-                        <TableCell align="right">{
-                            <Button variant="contained" color="secondary" startIcon={<DeleteIcon />} onClick={()=> deletereport(report._id)}>
-                            Delete</Button>
+                        <TableCell  >{new Date(report.date).toLocaleDateString()}</TableCell>
+                        <TableCell >{new Date(report.start_time).toLocaleTimeString()}</TableCell>
+                        <TableCell  >{new Date(report.end_time).toLocaleTimeString()}</TableCell>
+                        <TableCell  >{
+                            <Button onClick={()=> deletereport(report._id)}>
+                            Delete<DeleteIcon/></Button>
                             
                         }</TableCell>
                         <TableCell><Link to={`/edit-report/${report._id}`}>{<Button variant="contained" color="secondary" startIcon={<EditIcon />}>
-                            Edit</Button>}</Link></TableCell>
+                            Edit<EditIcon /></Button>}</Link></TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -80,7 +127,7 @@ function CSSavedReportList() {
             
       }
       {reports.length === 0 && <Loading/>}
-    </>
+    </div>
     )
 }
 
